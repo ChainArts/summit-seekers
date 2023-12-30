@@ -1,31 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { getCategoryID } from './functions.js';
+import { useFetchPosts } from './functions.js';
 
 function IconGrid() {
 
-  const [posts, setPosts] = useState([]);
+  const { posts, loading } = useFetchPosts("Icon");
 
-  useEffect(() => {
-   const fetchPosts = async () => {
-      const categoryId = await getCategoryID("Icon");
-      if (categoryId) {
-        fetch(`http://cms.localhost/wp-json/wp/v2/posts?categories=${categoryId}`)
-          .then(response => response.json())
-          .then(data => setPosts(data))
-          .catch(error => console.error("Error fetching posts:", error));
-      }
-    };
-
-    fetchPosts();
-  }, []);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div>
+    <div className='icon-grid'>
       {posts.map(post => (
         <div key={post.id}>
-          <h2>{post.title.rendered}</h2>
-         <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+          <h3>{post.title.rendered}</h3>
+          <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
         </div>
       ))}
     </div>

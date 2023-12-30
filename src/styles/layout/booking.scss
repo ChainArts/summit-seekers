@@ -1,4 +1,9 @@
-.feature-grid {
+.icon-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+
+    h3 {
+        color: var(--green);
+    }
 }
