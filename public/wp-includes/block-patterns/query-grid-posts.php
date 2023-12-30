@@ -8,7 +8,7 @@
 return array(
 	'title'      => _x( 'Grid', 'Block pattern title' ),
 	'blockTypes' => array( 'core/query' ),
-	'categories' => array( 'query' ),
+	'categories' => 'Features',
 	'content'    => '<!-- wp:query {"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"displayLayout":{"type":"flex","columns":3}} -->
 					<div class="wp-block-query">
 					<!-- wp:post-template -->
