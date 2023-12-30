@@ -176,6 +176,10 @@ h2, #header h1 {
   margin-bottom: var(--inner-section-padding);
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
 section {
   max-width: 1250px;
   margin: 0 auto;
@@ -187,6 +191,11 @@ p {
   line-height: 170%;
   max-width: 900px;
   margin: 0 auto;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /*# sourceMappingURL=style.css.map */
