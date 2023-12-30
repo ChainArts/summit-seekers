@@ -27,14 +27,14 @@ function register_my_menus() {
    add_action( 'init', 'register_my_menus' );
 
 
-include get_template_directory() . '/pattern/features-grid.php';
-add_action('init', function () {
-  register_block_pattern(
-    'summit-seekers/pattern/features-grid',
-    array(
-      'title' => 'Features Category Posts',
-      'description' => 'A list of posts from the Features category',
-      'content' => get_features_grid(),
-    )
-  );
-});
+// include get_template_directory() . '/pattern/features-grid.php';
+// add_action('init', function () {
+//   register_block_pattern(
+//     'summit-seekers/pattern/features-grid',
+//     array(
+//       'title' => 'Features Category Posts',
+//       'description' => 'A list of posts from the Features category',
+//       'content' => get_features_grid(),
+//     )
+//   );
+// });
