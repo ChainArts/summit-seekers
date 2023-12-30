@@ -1,0 +1,43 @@
+body {
+    font-size: var(--font-size);
+    font-weight: normal;
+    color: var(--gray);
+}
+
+.has-text-align-center {
+    text-align: center;
+}
+
+h1 {
+  font-family: "Guilty Pleasure";
+  color: var(--green-transparent);
+  font-size: 12.5rem;
+  line-height: normal;
+  text-align: center;
+}
+
+h2, #header h1 {
+  text-transform: uppercase;
+  color: var(--green);
+  font-size: 2.25rem;
+  font-style: medium;
+  line-height: normal;
+  margin-bottom: var(--inner-section-padding);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+section {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+p {
+  text-align: center;
+  line-height: 170%;
+  max-width: 900px;
+  margin: 0 auto;
+}

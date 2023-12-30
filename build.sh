@@ -1,6 +1,5 @@
 #!/bin/sh
-npx sass ./src/sass/style.scss ./public/wp-content/themes/summit-seekers/style.css
+#npx sass ./src/sass/style.scss ./public/wp-content/themes/summit-seekers/style.css
+npm run build:custom
 cp -R ./src/theme-root/* ./public/wp-content/themes/summit-seekers/
-cp -R ./src/fonts ./public/wp-content/themes/summit-seekers/fonts
-cp -R ./src/fonts ./public/wp-content/themes/summit-seekers/fonts
 

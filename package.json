@@ -1,9 +1,22 @@
 {
-  "dependencies": {
-  },
   "devDependencies": {
-    "sass": "^1.69.2",
     "browser-sync": "^2.29.3",
-    "esbuild": "^0.19.4"
+    "esbuild": "^0.19.4",
+    "sass": "^1.69.2"
+  },
+  "name": "cms-project",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:custom": "wp-scripts build --output-path=public/wp-content/themes/summit-seekers/build",
+    "start:custom": "wp-scripts start --output-path=public/wp-content/themes/summit-seekers/build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wordpress/scripts": "^26.19.0"
   }
 }
