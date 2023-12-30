@@ -1,0 +1,253 @@
+#level-card-container {
+    display: flex;
+    flex-direction: column;
+
+    .level-card {
+        position: relative;
+        display: flex;
+
+        .level-content {
+            background-color: $bggray;
+            color: white;
+        }
+
+        h3 {
+            margin-bottom: 0.6rem;
+            color: $primary;
+        }
+
+        .icon {
+            @include center; 
+            background-color: $darkgray;
+            border-radius: 50%;
+
+            img {
+                height: 60%;
+            }
+        }
+    }
+}
+
+@include breakpoint(0, $mobile) {
+
+    #level-card-container{
+        display: flex;
+        flex-direction: column;
+        gap: 7rem;
+        padding-top: $section_mobile;
+
+        h2 {
+            margin: 0;
+          }
+
+        .level-card {
+            gap: $section_mobile * 2;
+            flex-direction: column;
+            .level-content{
+                padding: $section_mobile $gap_standard calc(2* $gap_standard) $gap_standard;
+            }
+            .level {
+                position: absolute;
+                height: 2.31rem;
+                width: 2.31rem;
+                margin-left: 6.75rem;
+                top: -65px;
+                padding: 5px;
+                display: inline-block;
+                text-align: center;
+                align-self: center;
+                color: $orange;
+                font-size: $fontsize_h2;
+                font-weight: 500;
+                background-color: $middlgray;
+                border-radius: 50%;
+                
+                
+            }
+        
+            .icon {
+                height: 7.19rem;
+                width: 7.19rem;
+                position: absolute;
+                top: -59px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            blockquote, .wp-block-quote {
+                margin-top: 20px;
+                text-align: center;
+    
+                img {
+                height: 3.25rem;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint($mobile, 1500){
+    #workshops{
+        #level-card-container {
+            .level-card {
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+@include breakpoint($mobile, 1200){
+    #workshops{
+        #level-card-container {
+            .level{
+                display: none !important;
+            }
+
+            .icon {
+                height: 10rem !important;
+                width: 10rem !important;
+            }
+        }
+    }
+}
+
+@include breakpoint($desktop) {
+    #workshops{
+        padding: 0 $gap_desktop;
+
+        h2 {
+            margin-bottom: 5rem;
+        }
+
+        #level-card-container {
+            gap: $gap-desktop;
+            .level-card {
+                width: 80%;
+                min-width: 16rem;
+
+                .level {
+                    font-size: 18.75rem;
+                    font-weight: 600;
+                    color: $bggray;
+                    margin-right: -1.37rem;
+                }
+
+                .level-content {
+                    min-height: 20.75rem;
+                    display: grid;
+                    gap: $gap-desktop;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-areas: 'icon description description quote';
+                    padding: 2rem;
+
+                    .icon {
+                        justify-self: center;
+                        align-self: center;
+                        grid-area: icon;
+                        height: 15.5rem;
+                        width: 15.5rem;
+                    }
+
+                    .level-description {
+                        grid-area: description;
+                        grid-column: span 2;
+                    }
+
+                    blockquote {
+                        grid-area: quote;
+                        height: 100%;
+                        position: relative;
+                        p {
+                            font-size: $fontsize_h1;
+                            line-height: 3.5rem;
+                            width: 80%;
+                        }
+                        
+                        img {
+                            position: absolute;
+                            width: 55%;
+                            min-width: 7rem;
+                        }
+                    }
+                }
+            }
+
+            .level-card:nth-child(1){
+                align-self: flex-end;
+
+                .level-content{
+                    grid-template-areas: 'description description icon quote';
+                }
+
+                .level {
+                    margin-top: -3.52rem;
+                }
+
+                blockquote {
+                    align-self: flex-end;
+
+                    p{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                    
+                    img {
+                        right: -2rem;
+                        bottom: -2rem;
+                    }
+                }
+            }
+
+            .level-card:nth-child(2){
+                align-self: center;
+
+                .level-content{
+                    grid-template-areas: 'quote icon description description';
+                }
+
+                .level {
+                    align-self: center;
+                }
+
+                blockquote {
+                    align-self: flex-end;
+
+                    p{
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                    }
+                    
+                    img {
+                        right: 0;
+                        top: -2rem;
+                    }
+                }
+            }
+
+            .level-card:nth-child(3){
+
+                .level {
+                    margin-bottom: -3.52rem;
+                    align-self: end;
+                }
+
+                blockquote {
+                    align-self: flex-end;
+
+                    p{
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                    }
+                    
+                    img {
+                        right: -2rem;
+                        top: -2rem;
+                    }
+                }
+            }
+        }
+    }
+}
