@@ -1,0 +1,49 @@
+.has-text-align-center {
+    text-align: center;
+}
+
+.has-text-align-left {
+    text-align: left;
+}
+
+.has-text-align-right {
+    text-align: right;
+}
+
+.wp-block-buttons {
+    width: fit-content;
+    margin: var(--inner-component-padding) auto;
+    .wp-block-button {
+        position: relative;
+        border: 2px solid var(--gray);
+        border-radius: none;
+        background-color: transparent;
+        .wp-block-button__link {
+            padding: 1.5rem 2.75rem;
+            color: var(--gray);
+            background-color: transparent;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: -5px;
+            width: 0%;
+            height: 100%;
+            transform-origin: center left;
+            rotate: -4deg;
+            background-color: var(--green-transparent);
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover::before,
+        &:focus::before {
+            width: calc(100% + 10px);
+        }
+    }
+}
