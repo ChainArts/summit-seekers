@@ -1,0 +1,1 @@
+/home/mx/uni/cms/cms-project-scheipl-roll/public/wp-content/plugins/query-monitor/wp-content/db.php

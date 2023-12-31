@@ -67,6 +67,7 @@ table {
   --inner-component-padding: 2.75rem;
   --small-padding: 1.25rem;
   --font-size: 1.25rem;
+  --ease: cubic-bezier(.14,.8,.4,1);
   font-family: "Inter";
 }
 
@@ -132,15 +133,18 @@ table {
   border: 2px solid var(--gray);
   border-radius: none;
   background-color: transparent;
+  cursor: pointer;
 }
 .wp-block-buttons .wp-block-button .wp-block-button__link {
+  position: relative;
   padding: 1.5rem 2.75rem;
   color: var(--gray);
   background-color: transparent;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s var(--ease);
+  z-index: 2;
 }
 .wp-block-buttons .wp-block-button::before {
   content: "";
@@ -152,7 +156,8 @@ table {
   transform-origin: center left;
   rotate: -4deg;
   background-color: var(--green-transparent);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s var(--ease);
+  z-index: 1;
 }
 .wp-block-buttons .wp-block-button:hover::before, .wp-block-buttons .wp-block-button:focus::before {
   width: calc(100% + 10px);
