@@ -1,9 +1,17 @@
-.icon-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.icon-grid{
+    display: grid !important;
+    margin: var(--inner-section-padding) auto;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 100px;
     text-align: center;
+
+    p {
+        text-align: center;
+    }
 
     h3 {
         color: var(--green);
+        margin-bottom: var(--small-padding);
     }
 }
