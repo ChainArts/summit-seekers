@@ -6,4 +6,4 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 
-ReactDOM.render(<IconGrid />, document.querySelector("#render-react-example-here"))
+// ReactDOM.render(<IconGrid />, document.querySelector("#render-react-example-here"))
