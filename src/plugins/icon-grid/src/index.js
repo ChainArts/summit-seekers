@@ -2,12 +2,12 @@ import "./index.scss"
 import { getAllCategories } from "./functions"
 import React, { useState, useEffect } from "react"
 
-wp.blocks.registerBlockType("makeupnamespace/make-up-block-name", {
-  title: "Booking Grid",
+wp.blocks.registerBlockType("summitseekers/icon-grid-block", {
+  title: "Icon Grid",
   icon: "table-col-before",
   category: "common",
   attributes: {
-    categoryName: { type: "string" },
+    categoryID: { type: "string" },
   },
   edit: EditComponent,
   save: function () {
@@ -28,15 +28,17 @@ function EditComponent(props) {
     fetchData();
   }, []);
   
-  function updateCategoryName(e) {
-    props.setAttributes({ categoryName: e.target.value })
+  function updateCategoryID(e) {
+    props.setAttributes({ categoryID: e.target.value })
   }
 
   return (
-    <div className="makeUpYourBlockTypeName">
-      <select onChange={updateCategoryName}>
+    <div className="icon-grid-block">
+      <select onChange={updateCategoryID}>
         {categories.map(category => (
-          <option key={category.id} value={category.id}>{category.name}</option>
+          <option key={category.id} value={category.id} selected={props.attributes.categoryID == category.id ? "selected" : undefined}>
+            {category.name}
+          </option>
         ))}
       </select>
     </div>

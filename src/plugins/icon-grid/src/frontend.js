@@ -3,23 +3,22 @@ import React, { useState, useEffect } from "react"
 import ReactDOM from "react-dom"
 import { useFetchPosts } from "./functions"
 
-const bookingGrid = document.querySelectorAll(".booking-grid-update")
+const iconGrid = document.querySelectorAll(".icon-grid-update")
 
-if (bookingGrid !== null) {
-    bookingGrid.forEach(div => {
+if (iconGrid !== null) {
+    iconGrid.forEach(div => {
       const data = JSON.parse(div.querySelector("pre").innerText)
-      
       if (data) {
-        ReactDOM.render(<BookingGrid {...data} />, div)
+         ReactDOM.render(<IconGrid {...data} />, div)
       }
   })
 } else {
-  console.log("No booking grid elements found")
+  console.log("No icon grid elements found")
 }
 
-function BookingGrid(data) {
+function IconGrid(data) {
   
-  const { posts, loading, error } = useFetchPosts(data.categoryName);
+  const { posts, loading, error } = useFetchPosts(data.categoryID);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;

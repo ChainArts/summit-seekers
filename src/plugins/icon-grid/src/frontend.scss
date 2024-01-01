@@ -1,11 +1,10 @@
-.booking-grid-update{
+.icon-grid-update{
     display: grid !important;
     margin: var(--inner-section-padding) auto;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 300px);
     gap: 100px;
     text-align: center;
-    background-color: aquamarine;
 
     p {
         text-align: center;
