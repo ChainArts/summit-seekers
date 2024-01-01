@@ -3,15 +3,12 @@ import React, { useState, useEffect } from "react"
 import ReactDOM from "react-dom"
 import { useFetchPosts } from "./functions"
 
-const divsToUpdate = document.querySelectorAll(".boilerplate-update-me")
+const divsToUpdate = document.querySelectorAll(".icon-grid-update-me")
 
 divsToUpdate.forEach(div => {
   const data = JSON.parse(div.querySelector("pre").innerText)
   ReactDOM.render(<IconGrid {...data} />, div)
-  div.classList.remove("boilerplate-update-me")
 })
-
-
 
 function IconGrid(data) {
   

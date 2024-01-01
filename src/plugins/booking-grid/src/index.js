@@ -3,7 +3,7 @@ import { getAllCategories } from "./functions"
 import React, { useState, useEffect } from "react"
 
 wp.blocks.registerBlockType("makeupnamespace/make-up-block-name", {
-  title: "SummitSeekers Booking Grid",
+  title: "Icon Grid",
   icon: "table-col-before",
   category: "common",
   attributes: {
@@ -16,7 +16,6 @@ wp.blocks.registerBlockType("makeupnamespace/make-up-block-name", {
 })
 
 function EditComponent(props) {
-
 
   const [categories, setCategories] = useState([]);
 
