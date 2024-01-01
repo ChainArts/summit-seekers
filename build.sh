@@ -4,12 +4,14 @@
 
 
 # pulgin
-cd src/plugins/icon-grid
-npm run build:custom
-cp -R ./*.php ../../../public/wp-content/plugins/icon-grid/
 
+plugins=("icon-grid" "booking-grid")
 
-# cd src/plugins/booking-grid
-cd ../booking-grid
-npm run build:custom
-cp -R ./*.php ../../../public/wp-content/plugins/booking-grid/
+cd src/plugins
+for plugin in "${plugins[@]}"; do
+
+    cd "./$plugin"
+    npm run build:custom
+    cp -R ./*.php ../../../public/wp-content/plugins/$plugin/
+    cd ..
+done

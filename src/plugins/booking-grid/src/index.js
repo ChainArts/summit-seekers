@@ -1,5 +1,5 @@
 import "./index.scss"
-import { getAllCategories } from "./functions"
+import { getAllCategories } from "../../functions"
 import React, { useState, useEffect } from "react"
 
 wp.blocks.registerBlockType("makeupnamespace/make-up-block-name", {

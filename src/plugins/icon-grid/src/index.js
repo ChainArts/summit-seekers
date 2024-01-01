@@ -1,10 +1,12 @@
 import "./index.scss"
-import { getAllCategories } from "./functions"
+import "./frontend.scss"
+import { getAllCategories } from "../../functions"
 import React, { useState, useEffect } from "react"
+import IconGrid from "./frontend"
 
 wp.blocks.registerBlockType("summitseekers/icon-grid-block", {
   title: "Icon Grid",
-  icon: "table-col-before",
+  icon: "ellipsis",
   category: "common",
   attributes: {
     categoryID: { type: "string" },
@@ -34,13 +36,18 @@ function EditComponent(props) {
 
   return (
     <div className="icon-grid-block">
+      <h3>Icon Grid</h3>
       <select onChange={updateCategoryID}>
+        <option disabled selected>Select your category</option>
         {categories.map(category => (
           <option key={category.id} value={category.id} selected={props.attributes.categoryID == category.id ? "selected" : undefined}>
             {category.name}
           </option>
         ))}
       </select>
+      <div className="icon-grid-update">
+        {props.attributes.categoryID && <IconGrid {...props.attributes} />}
+      </div>
     </div>
   )
 }

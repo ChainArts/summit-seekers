@@ -1,18 +1,6 @@
-.booking-grid-update{
-    display: grid !important;
-    margin: var(--inner-section-padding) auto;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, 300px);
-    gap: 100px;
-    text-align: center;
-    background-color: aquamarine;
-
-    p {
-        text-align: center;
-    }
-
-    h3 {
-        color: var(--green);
-        margin-bottom: var(--small-padding);
-    }
+.makeUpYourBlockTypeName {
+  background-color: #10286c;
+  border: 1px solid #94a9e2;
+  border-radius: 5px;
+  padding: 20px;
 }

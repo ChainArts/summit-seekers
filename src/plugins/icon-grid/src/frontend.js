@@ -1,7 +1,9 @@
 import "./frontend.scss"
 import React, { useState, useEffect } from "react"
 import ReactDOM from "react-dom"
-import { useFetchPosts } from "./functions"
+import { useFetchPosts } from "../../functions"
+
+
 
 const iconGrid = document.querySelectorAll(".icon-grid-update")
 
@@ -12,11 +14,15 @@ if (iconGrid !== null) {
          ReactDOM.render(<IconGrid {...data} />, div)
       }
   })
-} else {
-  console.log("No icon grid elements found")
-}
+} 
 
 function IconGrid(data) {
+
+  console.log(data)
+
+  if (data.categoryID === undefined) { 
+    return <p>Select a category</p>
+  }
   
   const { posts, loading, error } = useFetchPosts(data.categoryID);
 
@@ -33,6 +39,6 @@ function IconGrid(data) {
       ))}
     </>
   );
-
 }
 
+export default IconGrid

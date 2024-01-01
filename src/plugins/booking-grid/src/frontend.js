@@ -1,7 +1,7 @@
 import "./frontend.scss"
 import React, { useState, useEffect } from "react"
 import ReactDOM from "react-dom"
-import { useFetchPosts } from "./functions"
+import { useFetchPosts } from "../../functions"
 
 const bookingGrid = document.querySelectorAll(".booking-grid-update")
 
