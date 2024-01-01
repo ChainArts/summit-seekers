@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useFetchPosts } from './functions.js';
 
-function IconGrid() {
+function BookingGrid() {
 
-  const { posts, loading } = useFetchPosts("Icon");
+  const { posts, loading } = useFetchPosts("Expedition");
 
   if (loading) {
     return <div>Loading...</div>;
@@ -22,4 +22,4 @@ function IconGrid() {
 
 }
 
-export default IconGrid;
+export default BookingGrid;

@@ -1,5 +1,5 @@
 import './styles/main.scss'
-import IconGrid from './scripts/IconGrid'
+import BookingGrid from './scripts/BookingGrid'
 import ExampleReactComponent from './scripts/ExampleReactComponent'
 
 import React from 'react'

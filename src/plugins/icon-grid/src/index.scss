@@ -3,3 +3,7 @@
   border-radius: 5px;
   padding: 20px;
 }
+
+.icon-grid-update{
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+}
