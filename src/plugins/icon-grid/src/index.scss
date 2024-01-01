@@ -1,0 +1,9 @@
+.icon-grid-block {
+  background-color: rgba(84, 144, 109, 0.5);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.icon-grid-update{
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+}

@@ -1,0 +1,2 @@
+.icon-grid-update{display:grid!important;gap:100px;grid-template-columns:repeat(auto-fit,300px);justify-content:center;margin:var(--inner-section-padding) auto;text-align:center}.icon-grid-update p{text-align:center}.icon-grid-update h3{color:var(--green);margin-bottom:var(--small-padding)}
+.icon-grid-block{background-color:rgba(84,144,109,.5);border-radius:5px;padding:20px}.icon-grid-update{grid-template-columns:repeat(3,minmax(100px,1fr))}
