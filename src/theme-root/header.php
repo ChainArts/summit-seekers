@@ -9,6 +9,6 @@
   <div id="cursor-hook">
     <!--react--> 
   </div>
-  <div id="header-hook">
+  <header id="header-hook">
     <!--react-->
-  </div>
+</header>
