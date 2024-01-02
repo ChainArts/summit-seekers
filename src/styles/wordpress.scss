@@ -52,13 +52,20 @@
     }
 }
 
-.wp-block-heading, wp-block-image{
-  user-select: none;
+.wp-block-heading,
+wp-block-image {
+    user-select: none;
 }
 
 @media screen and (max-width: $breakpoint) {
-    
-    .wp-block-buttons .wp-block-button::before{
-        width: calc(100% + 10px);
+    .wp-block-button {
+        font-size: 0.875rem;
+        &::before {
+            width: calc(100% + 10px) !important; ;
+        }
+
+        .wp-block-button__link {
+            padding: 1rem var(--inner-component-padding);
+        }
     }
 }

@@ -136,6 +136,13 @@ p {
 
 @media screen and (max-width: $breakpoint) {
 
+  :root {
+    --inner-section-padding: 2.25rem;
+    --inner-component-padding: 2.25rem;
+    --small-padding: 0.75rem;
+    --large-gap: 2.25rem;
+  }
+
   .custom-cursor{
     display: none;
   }

@@ -23,8 +23,10 @@
 
 @media (min-width: $breakpoint) {
     .expedition {
+
         .wp-block-buttons {
             margin-left: 0;
+            margin-bottom: 0;
         }
 
         .picture {
@@ -33,9 +35,10 @@
         
 
         .content {
-            max-width: calc($element-width / 2);
+            max-width: $half-width;
             padding-left: 0;
             padding-right: 1rem;
+            margin: var(--large-gap) 0;
         }
 
         &:nth-child(even) {

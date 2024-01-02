@@ -1,4 +1,4 @@
-import { getCategoryID, useFetchPosts } from "../scripts/functions";
+import { getCategoryID, useFetchPosts } from "./functions";
 import { useState } from "react";
 
 const Footer = () => {

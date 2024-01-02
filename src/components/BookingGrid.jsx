@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useFetchPosts } from '../scripts/functions.js';
+import { useFetchPosts } from './functions.js';
 
 const BookingGrid = () => {
 

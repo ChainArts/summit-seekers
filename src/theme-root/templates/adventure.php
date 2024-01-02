@@ -8,7 +8,7 @@
 
         
         <div class="adventure-content">
-            <p class="location"><?= get_post_meta(get_the_ID(), 'location', true); ?></p>
+            <p class="location"><?= get_post_meta(get_the_ID(), 'upperheading', true); ?></p>
             <h2><?php the_title(); ?></h2>
             <?php the_content(); ?>
         </div>
