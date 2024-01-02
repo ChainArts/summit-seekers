@@ -1,7 +1,6 @@
-body {
-    font-size: var(--font-size);
-    font-weight: normal;
-    color: var(--gray);
+@mixin center-margin($width: 1300px) {
+    max-width: $width;
+    margin: 0 auto;
 }
 
 @mixin heading ($fontsize) {
@@ -10,6 +9,13 @@ body {
     line-height: normal;
     font-size: $fontsize;
 }
+
+body {
+    font-size: var(--font-size);
+    font-weight: normal;
+    color: var(--gray);
+}
+
 
 h1 {
     @include heading(12.5rem);
@@ -20,6 +26,7 @@ h1 {
 
 h2,
 #header h1 {
+    @include center-margin();
     @include heading(2.25rem);
     color: var(--green);
     margin-bottom: var(--inner-section-padding);
@@ -36,7 +43,6 @@ section {
 }
 
 p {
+    @include center-margin(900px);
     line-height: 170%;
-    max-width: 900px;
-    margin: 0 auto;
 }
