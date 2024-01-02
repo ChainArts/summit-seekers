@@ -302,7 +302,7 @@ p {
 
 .headerParallax {
   position: relative;
-  height: 150vh;
+  height: 140vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -313,12 +313,11 @@ p {
   width: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 35%, rgb(255, 255, 255) 75%, rgba(255, 255, 255, 0) 100%);
   position: absolute;
-  top: 120vh;
+  top: 110vh;
   left: 0;
   z-index: 100;
 }
 .headerParallax .hero-text {
-  margin-top: 20vh;
   justify-content: center;
   align-items: center;
   color: white;

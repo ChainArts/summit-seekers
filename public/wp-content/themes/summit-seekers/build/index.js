@@ -150,7 +150,7 @@ const headerParallax = () => {
   const yRangeLayer5 = (0,framer_motion__WEBPACK_IMPORTED_MODULE_10__.useTransform)(scrollYProgress, [0, .7], [6000, 0], {
     ease: (0,framer_motion__WEBPACK_IMPORTED_MODULE_11__.cubicBezier)(.14, .8, .4, 1)
   });
-  const yRangeText = (0,framer_motion__WEBPACK_IMPORTED_MODULE_10__.useTransform)(scrollYProgress, [0, 1], [300, 500], {
+  const yRangeText = (0,framer_motion__WEBPACK_IMPORTED_MODULE_10__.useTransform)(scrollYProgress, [0, 1], [-400, 700], {
     ease: (0,framer_motion__WEBPACK_IMPORTED_MODULE_11__.cubicBezier)(.14, .8, .4, 1)
   });
   const yRangeLayer6 = (0,framer_motion__WEBPACK_IMPORTED_MODULE_10__.useTransform)(scrollYProgress, [0, .6], [9000, 0], {
@@ -159,7 +159,7 @@ const headerParallax = () => {
   const yRangeLayer7 = (0,framer_motion__WEBPACK_IMPORTED_MODULE_10__.useTransform)(scrollYProgress, [0, .5], [11500, 0], {
     ease: (0,framer_motion__WEBPACK_IMPORTED_MODULE_11__.cubicBezier)(.14, .8, .4, 1)
   });
-  const yRangeTrans = (0,framer_motion__WEBPACK_IMPORTED_MODULE_10__.useTransform)(scrollYProgress, [.5, .9], [100, -100], {
+  const yRangeTrans = (0,framer_motion__WEBPACK_IMPORTED_MODULE_10__.useTransform)(scrollYProgress, [.45, .9], [100, -100], {
     ease: (0,framer_motion__WEBPACK_IMPORTED_MODULE_11__.cubicBezier)(.14, .8, .4, 1)
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_12__.motion.div, {
@@ -172,27 +172,27 @@ const headerParallax = () => {
       y: yRangeLayer1,
       zIndex: 1
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_12__.motion.span, {
-    style: {
-      y: yRangeText,
-      zIndex: 2
-    },
-    className: "hero-text"
-  }, "Summit Seekers"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_12__.motion.img, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_12__.motion.img, {
     src: _assets_par_bg_layer_2_png__WEBPACK_IMPORTED_MODULE_2__,
     className: "parallax-layer",
     style: {
       y: yRangeLayer2,
-      zIndex: 3
+      zIndex: 5
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_12__.motion.img, {
     src: _assets_par_bg_layer_3_png__WEBPACK_IMPORTED_MODULE_3__,
     className: "parallax-layer",
     style: {
       y: yRangeLayer3,
-      zIndex: 4
+      zIndex: 3
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_12__.motion.img, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_12__.motion.span, {
+    style: {
+      y: yRangeText,
+      zIndex: 4
+    },
+    className: "hero-text"
+  }, "Summit Seekers"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_12__.motion.img, {
     src: _assets_par_bg_layer_4_png__WEBPACK_IMPORTED_MODULE_4__,
     className: "parallax-layer",
     style: {
