@@ -1,9 +1,13 @@
 <?php
 
 get_header(); ?>
-<div id="nav-hook">
+  <header id="header-hook">
+    <!--react-->
+</header>
+
+<nav id="nav-hook">
   <!--react-->
-</div>
+</nav>
 <main>
 
 <?php if (have_posts()) {

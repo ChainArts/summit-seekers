@@ -1,6 +1,6 @@
 const NavBar = () => {
   return (
-    <nav>
+    <>
       <ul>
         <li>Summit Seekers</li>
         <li>Booking</li>
@@ -8,7 +8,7 @@ const NavBar = () => {
         <li>Explore</li>
         <li>About</li>
       </ul>
-    </nav>
+    </>
   )
 }
 

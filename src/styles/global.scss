@@ -15,8 +15,10 @@ html{
 }
 
 body {
+    @include center-margin(2200px);
     font-size: var(--font-size);
     font-weight: normal;
+    background-color: var(--white);
     color: var(--gray);
 }
 

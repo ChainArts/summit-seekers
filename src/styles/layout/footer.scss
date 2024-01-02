@@ -1,0 +1,67 @@
+footer {
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .contact,
+    .continents {
+        background-color: var(--dark-green);
+        padding: var(--large-gap);
+        border-top: 2px solid var(--white);
+    }
+
+    .continents {
+        border-right: 2px solid var(--white);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: var(--inner-component-padding);
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        div {
+            width: fit-content;
+        }
+
+        ul {
+            li {
+                font-weight: 200;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .follow {
+            font-family: "Guilty Pleasure";
+            font-size: 4rem;
+            margin-bottom: var(--inner-component-padding);
+        }
+
+        ul {
+        margin-top: auto;
+        margin-bottom: var(--large-gap);
+        display: flex;
+        gap: var(--inner-component-padding);
+    }
+    }
+}
+
+@media (max-width: $breakpoint) {
+    footer {
+        grid-template-columns: 1fr;
+        .continents {
+            border-right: none;
+        }
+    }
+}

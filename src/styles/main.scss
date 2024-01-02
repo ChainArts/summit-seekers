@@ -1,10 +1,11 @@
-@import "reset";
+@import "./general/reset";
+@import "./general/fonts";
+@import "./general/base";
 @import "variables";
-@import "fonts";
-@import "base";
 @import "wordpress";
 @import "global";
 @import "./layout/header";
 @import "./layout/navbar";
 @import "./layout/booking";
 @import "./layout/adventure";
+@import "./layout/footer";
