@@ -1,11 +1,43 @@
+import {useState, useEffect} from 'react';
 import { motion, cubicBezier } from 'framer-motion';
 import useMousePos from './useMousePos';
 
 const CustomCursor = () => {
 
   const { x, y } = useMousePos();
+  const [isHovered, setIsHovered] = useState(false); // State to track hover state
+
+  const handleHoverStart = () => {
+    setIsHovered(true);
+    // Add logic to update cursor text when hovering starts
+    document.getElementById('cursor-text').innerText = '>';
+  };
+
+  const handleHoverEnd = () => {
+    setIsHovered(false);
+    // Add logic to clear cursor text when hovering ends
+    document.getElementById('cursor-text').innerText = '';
+  };
+
+  useEffect(() => {
+    const anchors = document.querySelectorAll('a, .wp-block-button');
+    
+    anchors.forEach((anchor) => {
+      anchor.addEventListener('mouseenter', handleHoverStart);
+      anchor.addEventListener('mouseleave', handleHoverEnd);
+    });
+
+    return () => {
+      // Cleanup event listeners on unmount
+      anchors.forEach((anchor) => {
+        anchor.removeEventListener('mouseenter', handleHoverStart);
+        anchor.removeEventListener('mouseleave', handleHoverEnd);
+      });
+    };
+  }, []);
+
   return (
-    <motion.div className="custom-cursor"
+    <motion.div className={`custom-cursor ${isHovered ? 'hovered' : ''}`}
       animate={{
         translateX: `${x}px`,
         translateY: `${y}px`

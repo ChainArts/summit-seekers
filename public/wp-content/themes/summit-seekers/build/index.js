@@ -20,13 +20,40 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const CustomCursor = () => {
   const {
     x,
     y
   } = (0,_useMousePos__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  const [isHovered, setIsHovered] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false); // State to track hover state
+
+  const handleHoverStart = () => {
+    setIsHovered(true);
+    // Add logic to update cursor text when hovering starts
+    document.getElementById('cursor-text').innerText = '>';
+  };
+  const handleHoverEnd = () => {
+    setIsHovered(false);
+    // Add logic to clear cursor text when hovering ends
+    document.getElementById('cursor-text').innerText = '';
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const anchors = document.querySelectorAll('a, .wp-block-button');
+    anchors.forEach(anchor => {
+      anchor.addEventListener('mouseenter', handleHoverStart);
+      anchor.addEventListener('mouseleave', handleHoverEnd);
+    });
+    return () => {
+      // Cleanup event listeners on unmount
+      anchors.forEach(anchor => {
+        anchor.removeEventListener('mouseenter', handleHoverStart);
+        anchor.removeEventListener('mouseleave', handleHoverEnd);
+      });
+    };
+  }, []);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
-    className: "custom-cursor",
+    className: `custom-cursor ${isHovered ? 'hovered' : ''}`,
     animate: {
       translateX: `${x}px`,
       translateY: `${y}px`

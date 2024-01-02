@@ -26,7 +26,7 @@ if ($adventure_query->have_posts()):
     $adventure_query->the_post(); ?>
       <article>
       <h3>
-          <a href="<?php the_permalink(); ?>">
+          <a href="<?php the_permalink(); ?> ">
               <?php the_title(); ?>
           </a>
       </h3>

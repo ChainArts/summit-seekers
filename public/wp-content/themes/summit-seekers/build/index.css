@@ -174,6 +174,10 @@ table {
           user-select: none;
 }
 
+html {
+  scrollbar-width: thin;
+}
+
 body {
   font-size: var(--font-size);
   font-weight: normal;
@@ -227,6 +231,9 @@ p {
   z-index: 999;
   pointer-events: none;
 }
+.custom-cursor.hovered .cursor-bubble {
+  padding: 3rem !important;
+}
 .custom-cursor .cursor-bubble {
   position: absolute;
   display: flex;
@@ -236,6 +243,7 @@ p {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.4s var(--ease);
 }
 .custom-cursor .cursor-box {
   color: var(--brown);
@@ -244,7 +252,7 @@ p {
   right: 0.5em;
   top: 0.5em;
   bottom: 0.5em;
-  transition: all 0.3s var(--ease);
+  transition: all 0.4s var(--ease);
 }
 .custom-cursor .cursor-box .corner {
   width: 0.5em;
