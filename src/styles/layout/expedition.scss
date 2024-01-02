@@ -1,0 +1,51 @@
+.expedition {
+
+    gap: var(--large-gap);
+
+    margin: calc(var(--large-gap) / 2) 0;
+
+    .content {
+        padding: 1rem;
+    }
+
+    figure {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (min-width: $breakpoint) {
+    .expedition {
+        .wp-block-buttons {
+            margin-left: 0;
+        }
+
+        .picture {
+            max-width: calc(50% - (var(--large-gap) / 2));
+        }
+        
+
+        .content {
+            max-width: calc($element-width / 2);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+            padding: 0;
+
+            .content {
+                padding-right: 0;
+                padding-left: 1rem;
+            }
+        }
+    }
+}

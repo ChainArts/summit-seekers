@@ -43,13 +43,12 @@ h3 {
 }
 
 section {
-    max-width: 1250px;
-    margin: 0 auto;
+    @include center-margin();
     padding: 0 1rem;
 }
 
 p {
-    @include center-margin(900px);
+    @include center-margin($element-width);
     line-height: 170%;
 }
 
@@ -134,4 +133,32 @@ p {
   }
 }
 
+
+@media screen and (max-width: $breakpoint) {
+
+  .custom-cursor{
+    display: none;
+  }
+
+    body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2,
+    #header h1 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
 

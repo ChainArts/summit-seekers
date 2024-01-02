@@ -39,7 +39,7 @@
             width: 0%;
             height: 100%;
             transform-origin: center left;
-            rotate: -4deg;
+            rotate: -3deg;
             background-color: var(--green-transparent);
             transition: all 0.3s var(--ease);
             z-index: 1;
@@ -54,4 +54,11 @@
 
 .wp-block-heading, wp-block-image{
   user-select: none;
+}
+
+@media screen and (max-width: $breakpoint) {
+    
+    .wp-block-buttons .wp-block-button::before{
+        width: calc(100% + 10px);
+    }
 }
