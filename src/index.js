@@ -1,9 +1,10 @@
 import './styles/main.scss'
-import BookingGrid from './scripts/BookingGrid'
-import ExampleReactComponent from './scripts/ExampleReactComponent'
+import HeaderParallax from './components/headerParallax'
+import NavBar from './components/navBar'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+ReactDOM.render(<HeaderParallax />, document.getElementById('header-hook'))
+ReactDOM.render(<NavBar />, document.getElementById('nav-hook'))
 
-// ReactDOM.render(<IconGrid />, document.querySelector("#render-react-example-here"))

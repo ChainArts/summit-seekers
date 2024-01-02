@@ -51,3 +51,7 @@
         }
     }
 }
+
+.wp-block-heading, wp-block-image{
+  user-select: none;
+}
