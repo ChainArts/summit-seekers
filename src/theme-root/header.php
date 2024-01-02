@@ -6,6 +6,9 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?> >
+  <div id="cursor-hook">
+    <!--react--> 
+  </div>
   <div id="header-hook">
     <!--react-->
   </div>

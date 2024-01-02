@@ -4,5 +4,7 @@
 @import "base";
 @import "wordpress";
 @import "global";
+@import "./layout/header";
+@import "./layout/navbar";
 @import "./layout/booking";
 @import "./layout/adventure";

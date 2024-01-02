@@ -21,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.33",
     "framer-motion": "^10.16.16"
   }
 }

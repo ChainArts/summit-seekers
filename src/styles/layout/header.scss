@@ -1,0 +1,37 @@
+.headerParallax{
+  position: relative;
+  height: 150vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  & .hero-transition-gradient{
+    height: 60vh;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%,  rgba(255,255,255,1) 75%, rgba(255,255,255,0) 100%);
+    position: absolute;
+    top: 120vh;
+    left: 0;
+    z-index: 100;
+  }
+
+  & .hero-text{
+    margin-top: 20vh;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0px 0px 100px rgba(0,0,0,1);
+  }
+
+  & .parallax-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    object-fit: fill;
+  }
+}
