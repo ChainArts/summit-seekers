@@ -2,6 +2,7 @@ import "./frontend.scss";
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { useFetchPosts } from "../../functions";
+import { LiaArrowRightSolid } from "react-icons/lia";
 
 const carousel = document.querySelectorAll(".carousel-update");
 
@@ -29,22 +30,19 @@ function Carousel(data) {
 
 function CarouselItem({ data }) {
     return (
-        <div className="card">
-            <div className="image">
-                {/* {console.log(data.featured_media)} */}
-                <Image id={data.featured_media} />
-            </div>
+        <a href={data.link} className="card">
+            <Image id={data.featured_media} />
             <div className="content">
-                <div className="arrow"></div>
+                <LiaArrowRightSolid className="arrow" />
                 <h3>{data.title.rendered}</h3>
+                <p>{data.meta.footnotes}</p>
             </div>
-        </div>
+        </a>
     );
 }
 
 function Image({ id }) {
     const [image] = useImageUrl(id)
-    //const [imageTag, setImageTag] = useState(" ")
     const imgTagRegex = /<img [^>]*src="[^"]*"[^>]*>/;
     let imageTag = ""
 
@@ -56,7 +54,7 @@ function Image({ id }) {
 
     return (
         <>
-            <div
+            <div className="picture-container"
                 dangerouslySetInnerHTML={{
                     __html: image.description
                         ? imageTag

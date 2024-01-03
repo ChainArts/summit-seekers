@@ -1,17 +1,47 @@
-.icon-grid-update{
-    display: grid !important;
-    margin: var(--inner-section-padding) auto;
+.carousel-update {
+    max-width: 1000px;
+    margin: 4.5rem auto;
+    display: flex;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, 300px);
-    gap: 100px;
-    text-align: center;
+    gap: 3rem;
 
-    p {
-        text-align: center;
-    }
+    .card {
+        position: relative;
+        width: clamp(280px, 100%, 320px);
+        min-height: 480px;
 
-    h3 {
-        color: var(--green);
-        margin-bottom: var(--small-padding);
+        .content {
+            position: absolute;
+            padding: 1.25rem;
+            bottom: 0;
+            color: white;
+            width: 100%;
+            background: rgb(0,0,0);
+            background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);  
+
+            .arrow {
+                font-size: 3rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+
+            p {
+                margin-top: 2.75rem;
+                text-transform: uppercase;
+            }
+        }
+
+        .picture-container {
+            height: 100%;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
     }
 }
