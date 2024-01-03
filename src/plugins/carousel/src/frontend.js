@@ -14,17 +14,9 @@ if (carousel !== null) {
     });
 }
 
-const Carousel = (data) => {
-    
-    if (data.categoryID === undefined) {
-        return <p>Select a category</p>;
-    }
+function Carousel(data) {
 
-    const { imageID, setImageID } = useState(null);
     const { posts, loading, error } = useFetchPosts(data.categoryID);
-
-    //posts.map((post) => setImageID(post.featured_media));
-
 
     return (
         <>
@@ -39,7 +31,7 @@ function CarouselItem({ data }) {
     return (
         <div className="card">
             <div className="image">
-                <img scr="" />
+                {console.log(useImageUrl(data.featured_media))}
             </div>
             <div className="content">
                 <div className="arrow"></div>
@@ -65,7 +57,6 @@ export function useImageUrl(image_id) {
                     throw new Error("Network response was not ok");
                 }
                 const data = await response.json();
-                console.log("function:", data);
                 setPost(data);
             } catch (error) {
                 setError(error);

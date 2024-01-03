@@ -9,7 +9,7 @@
 
 if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class SummitSeekersIconGrid {
+class SummitSeekersCarousel {
   function __construct() {
     add_action('init', array($this, 'onInit'));
   }
@@ -38,4 +38,4 @@ class SummitSeekersIconGrid {
   }
 }
 
-$summitSeekerPlugin = new SummitSeekersIconGrid();
+$summitSeekerPlugin = new SummitSeekersCarousel();
