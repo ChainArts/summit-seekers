@@ -44,34 +44,22 @@ function CarouselItem({ data }) {
 
 function Image({ id }) {
     const [image] = useImageUrl(id)
-    const [imageTag, setImageTag] = useState("")
+    //const [imageTag, setImageTag] = useState(" ")
     const imgTagRegex = /<img [^>]*src="[^"]*"[^>]*>/;
+    let imageTag = ""
 
-    // if (image.description) {
-    //     //console.log(image.description.rendered);
-        
-    //     const match = image.description.rendered.match(imgTagRegex);
-    //     setImageTag(match ? match[0] : "")
-    //     console.log(imageTag)
-    // }
+    if (image.description) {
+        const match = image.description.rendered.match(imgTagRegex);
+        imageTag = match ? match[0] : "";
+    }
 
-    useEffect(() => { 
-        if (image.description) {
-        //console.log(image.description.rendered);
-        
-            const match = image.description.rendered.match(imgTagRegex);
-            setImageTag(match ? match[0] : "")
-            console.log(imageTag)
-        }
-
-    }, [image])
 
     return (
         <>
             <div
                 dangerouslySetInnerHTML={{
                     __html: image.description
-                        ? image.description.rendered
+                        ? imageTag
                         : null,
                 }}
             />
