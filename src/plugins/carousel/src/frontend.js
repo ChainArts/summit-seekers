@@ -31,13 +31,51 @@ function CarouselItem({ data }) {
     return (
         <div className="card">
             <div className="image">
-                {console.log(useImageUrl(data.featured_media))}
+                {/* {console.log(data.featured_media)} */}
+                <Image id={data.featured_media} />
             </div>
             <div className="content">
                 <div className="arrow"></div>
                 <h3>{data.title.rendered}</h3>
             </div>
         </div>
+    );
+}
+
+function Image({ id }) {
+    const [image] = useImageUrl(id)
+    const [imageTag, setImageTag] = useState("")
+    const imgTagRegex = /<img [^>]*src="[^"]*"[^>]*>/;
+
+    // if (image.description) {
+    //     //console.log(image.description.rendered);
+        
+    //     const match = image.description.rendered.match(imgTagRegex);
+    //     setImageTag(match ? match[0] : "")
+    //     console.log(imageTag)
+    // }
+
+    useEffect(() => { 
+        if (image.description) {
+        //console.log(image.description.rendered);
+        
+            const match = image.description.rendered.match(imgTagRegex);
+            setImageTag(match ? match[0] : "")
+            console.log(imageTag)
+        }
+
+    }, [image])
+
+    return (
+        <>
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: image.description
+                        ? image.description.rendered
+                        : null,
+                }}
+            />
+        </>
     );
 }
 
