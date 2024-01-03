@@ -1,4 +1,3 @@
-import "./frontend.scss"
 import "./index.scss"
 import { getAllCategories } from "../../functions"
 import React, { useState, useEffect } from "react"
@@ -35,17 +34,29 @@ function EditComponent(props) {
   }
 
   return (
-    <div className="carousel-block">
-      <h3>Carousel</h3>
-      <select onChange={updateCategoryID}>
-        <option disabled selected>Select your category</option>
-        {categories.map(category => (
-          <option key={category.id} value={category.id} selected={props.attributes.categoryID == category.id ? "selected" : undefined}>
-            {category.name}
-          </option>
-        ))}
-      </select>
- 
-    </div>
-  )
+      <div className="carousel-block">
+          <h3>Summit Seekers Carousel</h3>
+          <select onChange={updateCategoryID}>
+              <option disabled selected>
+                  Select your category
+              </option>
+              {categories.map((category) => (
+                  <option
+                      key={category.id}
+                      value={category.id}
+                      selected={
+                          props.attributes.categoryID == category.id
+                              ? "selected"
+                              : undefined
+                      }
+                  >
+                      {category.name}
+                  </option>
+              ))}
+          </select>
+          <div className="carousel-preview">
+              {props.attributes.categoryID ?< Carousel {...props.attributes} /> : null}
+          </div>
+      </div>
+  );
 }

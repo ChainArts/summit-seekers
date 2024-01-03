@@ -1,9 +1,52 @@
-.icon-grid-block {
-  background-color: rgba(84, 144, 109, 0.5);
-  border-radius: 5px;
-  padding: 20px;
-}
+.carousel-preview {
+    max-width: 1000px;
+    display: flex;
+    margin: 1rem auto;
+    justify-content: center;
+    gap: 1rem;
 
-.icon-grid-update{
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    .card {
+        padding: 0;
+        border: none;
+        position: relative;
+        width: 200px;
+        min-height: 480px;
+
+        .content {
+            position: absolute;
+            padding: 1.25rem;
+            bottom: 0;
+            color: white;
+            width: calc(199px + 1rem);
+            background: rgb(0, 0, 0);
+            background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.5) 0%,
+                rgba(0, 0, 0, 0) 100%
+            );
+
+            .arrow {
+                display: none;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+
+            p {
+                text-transform: uppercase;
+            }
+        }
+
+        .picture-container {
+            height: 100%;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
 }

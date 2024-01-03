@@ -2,7 +2,7 @@
 
 /*
   Plugin Name: Summit Seekers Carousel
-  Version: 1.0
+  Version: 2.0
   Author: Sandra Scheipl
   Description: A plugin that adds a custom block for the SummitSeeker theme.
 */
