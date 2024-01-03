@@ -1,7 +1,7 @@
 #!/bin/sh
 #rm -rf ./public/wp-content/themes/summit-seekers/
 
-plugins=("booking-grid")
+plugins=("carousel")
 
 for plugin in "${plugins[@]}"; do
     rm -rf ./public/wp-content/plugins/$plugin/

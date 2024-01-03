@@ -22,9 +22,7 @@ export const useFetchPosts = (categoryName) => {
   useEffect(() => {
     setError(null);
     const fetchPosts = async () => {
-      console.log(categoryName);
       const categoryId = await getCategoryID(categoryName)
-      console.log(categoryId);
       if (categoryId) {
         fetch(`http://cms.localhost/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
           .then(response => response.json())
