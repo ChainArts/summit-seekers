@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 export const getCategoryID = async (categoryName) => {
   try {
-    const response = await fetch('http://cms.localhost/wp-json/wp/v2/categories');
+    const response = await fetch(`${window.location.origin}/wp-json/wp/v2/categories`);
     const categories = await response.json();
 
     const category = categories.find(cat => cat.name.toLowerCase() === categoryName.toLowerCase());
@@ -24,7 +24,7 @@ export const useFetchPosts = (categoryName) => {
     const fetchPosts = async () => {
       const categoryId = await getCategoryID(categoryName)
       if (categoryId) {
-        fetch(`http://cms.localhost/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
+        fetch(`${window.location.origin}/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
           .then(response => response.json())
           .then(data => {
             setPosts(data);

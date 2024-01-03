@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export const getCategoryID = async (categoryName) => {
   try {
-    const response = await fetch('http://cms.localhost/wp-json/wp/v2/categories');
+    const response = await fetch(`${window.location.origin}/wp-json/wp/v2/categories`);
     const categories = await response.json();
 
     const category = categories.find(cat => cat.name.toLowerCase() === categoryName.toLowerCase())
@@ -15,7 +15,7 @@ export const getCategoryID = async (categoryName) => {
 
 export const getAllCategories = async () => {
     try {
-        const response = await fetch('http://cms.localhost/wp-json/wp/v2/categories');
+        const response = await fetch(`${window.location.origin}/wp-json/wp/v2/categories`);
         const categories = await response.json();
         const filteredCategories = categories.filter(category => category.count > 0);
 
@@ -37,7 +37,7 @@ export function useFetchPosts(category) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`http://cms.localhost/wp-json/wp/v2/posts?categories=${category}`);
+        const response = await fetch(`${window.location.origin}/wp-json/wp/v2/posts?categories=${category}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

@@ -1,7 +1,7 @@
-#!/bin/sh
-# npm run build:custom
-# cp -R ./src/theme-root/* ./public/wp-content/themes/summit-seekers/
-# cp -R ./src/assets ./public/wp-content/themes/summit-seekers/assets
+#!/bin/zsh
+ npm run build:custom
+ cp -R ./src/theme-root/* ./public/wp-content/themes/summit-seekers/
+ cp -R ./src/assets ./public/wp-content/themes/summit-seekers/assets
 
 plugins=("carousel")
 
