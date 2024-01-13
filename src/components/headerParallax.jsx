@@ -24,27 +24,43 @@ const headerParallax = () => {
         target: containerRef,
         offset: ['start center', 'end start']
     });
-    const yRangeLayer1 = useTransform(scrollYProgress, [0, 1], [200, 0], { ease: cubicBezier(.14, .8, .4, 1) });
-    const yRangeLayer2 = useTransform(scrollYProgress, [0, .95], [1500, 0], { ease: cubicBezier(.14, .8, .4, 1) });
-    const yRangeLayer3 = useTransform(scrollYProgress, [0, .85], [3000, 0], { ease: cubicBezier(.14, .8, .4, 1) });
-    const yRangeLayer4 = useTransform(scrollYProgress, [0, .75], [4500, 0], { ease: cubicBezier(.14, .8, .4, 1) });
-    const yRangeLayer5 = useTransform(scrollYProgress, [0, .7], [6000, 0], { ease: cubicBezier(.14, .8, .4, 1) });
-    const yRangeText = useTransform(scrollYProgress, [0, 1], [-400, 700], { ease: cubicBezier(.14, .8, .4, 1) });
-    const yRangeLayer6 = useTransform(scrollYProgress, [0, .6], [9000, 0], { ease: cubicBezier(.14, .8, .4, 1) });
-    const yRangeLayer7 = useTransform(scrollYProgress, [0, .5], [11500, 0], { ease: cubicBezier(.14, .8, .4, 1) });
-    const yRangeTrans = useTransform(scrollYProgress, [.45, .9], [100, -100], { ease: cubicBezier(.14, .8, .4, 1) });
+    const yRangeLayer1 = useTransform(scrollYProgress, [0, 1], [-300, 100], { ease: cubicBezier(.14, .8, .4, 1) });
+    const yRangeLayer2 = useTransform(scrollYProgress, [0, .95], [-300, 0], { ease: cubicBezier(.14, .8, .4, 1) });
+    const yRangeLayer3 = useTransform(scrollYProgress, [0, 1], [300, 0], { ease: cubicBezier(.14, .8, .4, 1) });
+    const yRangeLayer4 = useTransform(scrollYProgress, [0, 1], [800, 0], { ease: cubicBezier(.14, .8, .4, 1) });
+    const yRangeLayer5 = useTransform(scrollYProgress, [0, .65], [2500, 0], { ease: cubicBezier(.14, .8, .4, 1) });
+    const yRangeText = useTransform(scrollYProgress, [0, 1], [-600, 800], { ease: cubicBezier(.14, .8, .4, 1) });
+    const yRangeLayer6 = useTransform(scrollYProgress, [0, .7], [3000, 0], { ease: cubicBezier(.14, .8, .4, 1) });
+    const yRangeLayer7 = useTransform(scrollYProgress, [0, .8], [3000, -15], { ease: cubicBezier(.14, .8, .4, 1) });
+    const yRangeTrans = useTransform(scrollYProgress, [.45, .9], [200, 75], { ease: cubicBezier(.14, .8, .4, 1) });
 
     return (
 
         <motion.div ref={containerRef} className="headerParallax">
-            <motion.img src={PR_layer_1} className="parallax-layer" style={{ y: yRangeLayer1, zIndex: 1 }} />
-            <motion.img src={PR_layer_2} className="parallax-layer" style={{ y: yRangeLayer2, zIndex: 5 }} />
-            <motion.img src={PR_layer_3} className="parallax-layer" style={{ y: yRangeLayer3, zIndex: 3 }} />
+            <motion.div src={PR_layer_1} className="parallax-layer" style={{ y: yRangeLayer1, zIndex: 1 }} >
+                <img src={PR_layer_1} />
+            </motion.div>
+            <motion.div src={PR_layer_2} className="parallax-layer" style={{ y: yRangeLayer2, zIndex: 5 }} >
+                <img src={PR_layer_2} />
+            </motion.div>
+            <motion.div className="parallax-layer" style={{ y: yRangeLayer3, zIndex: 3 }}>
+                <img src={PR_layer_3} />
+            </motion.div>
             <motion.span style={{ y: yRangeText, zIndex: 4 }} className="hero-text">Summit Seekers</motion.span>
-            <motion.img src={PR_layer_4} className="parallax-layer" style={{ y: yRangeLayer4, zIndex: 5 }} />
-            <motion.img src={PR_layer_5} className="parallax-layer" style={{ y: yRangeLayer5, zIndex: 6 }} />
-            <motion.img src={PR_layer_6} className="parallax-layer" style={{ y: yRangeLayer6, zIndex: 7 }} />
-            <motion.img src={PR_layer_7} className="parallax-layer" style={{ y: yRangeLayer7, zIndex: 8 }} />
+            <motion.div className="parallax-layer" style={{ y: yRangeLayer4, zIndex: 5 }} >
+                <img src={PR_layer_4} />
+            </motion.div>
+            
+            <motion.div className="parallax-layer" style={{ y: yRangeLayer5, zIndex: 6 }} >
+                <img src={PR_layer_5} style={{objectPosition: "center"}} />
+            </motion.div>
+            
+            <motion.div className="parallax-layer" style={{ y: yRangeLayer6, zIndex: 7 }} >
+                <img src={PR_layer_6} />
+            </motion.div>
+            <motion.div className="parallax-layer" style={{ y: yRangeLayer7, zIndex: 8, height: "auto", bottom: 0, top: "auto"}}>
+                <img src={PR_layer_7}/>
+            </motion.div>
             <motion.div className="hero-transition-gradient" style={{ y: yRangeTrans }}></motion.div>
         </motion.div>
     );
