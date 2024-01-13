@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { useFetchPosts } from "../../functions";
 import { LiaArrowRightSolid } from "react-icons/lia";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 const carousel = document.querySelectorAll(".carousel-update");
 
@@ -16,15 +18,32 @@ if (carousel !== null) {
 }
 
 function Carousel(data) {
-
     const { posts, loading, error } = useFetchPosts(data.categoryID);
 
     return (
-        <>
-            {posts.map((post) => (
-                <CarouselItem key={post.id} data={post} />
-            ))}
-        </>
+        <Swiper
+            spaceBetween={48}
+            slidesPerView={3}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+        >
+                {posts.map((post) => (
+                    <SwiperSlide>
+                        <CarouselItem key={post.id} data={post} />
+                    </SwiperSlide>
+                ))}
+        </Swiper>
+    );
+}
+
+function CarouselButton({ direction, onClick }) {
+    return (
+        <button
+            className={`carousel-button carousel-button-${direction}`}
+            onClick={onClick}
+        >
+            {direction}
+        </button>
     );
 }
 
@@ -42,29 +61,26 @@ function CarouselItem({ data }) {
 }
 
 function Image({ id }) {
-    const [image] = useImageUrl(id)
+    const [image] = useImageUrl(id);
     const imgTagRegex = /<img [^>]*src="[^"]*"[^>]*>/;
-    let imageTag = ""
+    let imageTag = "";
 
     if (image.description) {
         const match = image.description.rendered.match(imgTagRegex);
         imageTag = match ? match[0] : "";
     }
 
-
     return (
         <>
-            <div className="picture-container"
+            <div
+                className="picture-container"
                 dangerouslySetInnerHTML={{
-                    __html: image.description
-                        ? imageTag
-                        : null,
+                    __html: image.description ? imageTag : null,
                 }}
             />
         </>
     );
 }
-
 
 export function useImageUrl(image_id) {
     const [post, setPost] = useState([]);

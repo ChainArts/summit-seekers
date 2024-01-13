@@ -1,23 +1,28 @@
 .carousel-update {
     max-width: 1000px;
     margin: 4.5rem auto;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
     display: flex;
-    justify-content: center;
-    gap: 3rem;
 
     .card {
         position: relative;
-        width: clamp(280px, 100%, 320px);
-        min-height: 480px;
 
         .content {
             position: absolute;
             padding: 1.25rem;
-            bottom: 0;
+            top: 0;
             color: white;
             width: 100%;
             background: rgb(0,0,0);
             background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);  
+            //opacity: 0;
+            //transform: translateY(-100%);
+            transition: all 0.4s var(--ease);
+
+       
 
             .arrow {
                 font-size: 3rem;
@@ -34,8 +39,8 @@
         }
 
         .picture-container {
-            height: 100%;
-            width: 100%;
+            width: 320px;
+        height: 480px;
 
             img {
                 height: 100%;
