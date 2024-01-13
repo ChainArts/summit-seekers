@@ -19,5 +19,5 @@
 }
 
 $breakpoint: 932px;
-$element-width: 1000px;
-$half-width: 560px;
+$element-width: 1300px;
+$half-width: calc(($element-width / 2) - (var(--large-gap) / 2))

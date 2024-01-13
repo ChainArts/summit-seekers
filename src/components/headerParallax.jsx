@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useTransform, useScroll, cubicBezier } from "framer-motion";
 import Lenis from '@studio-freight/lenis';
-import PR_layer_1 from '../assets/par_bg_layer_1.webp';
-import PR_layer_2 from '../assets/par_bg_layer_2.webp';
-import PR_layer_3 from '../assets/par_bg_layer_3.webp';
-import PR_layer_4 from '../assets/par_bg_layer_4.webp';
-import PR_layer_5 from '../assets/par_bg_layer_5.webp';
-import PR_layer_6 from '../assets/par_bg_layer_6.webp';
-import PR_layer_7 from '../assets/par_bg_layer_7.webp';
+import PR_layer_1 from '../assets/par_bg_layer_1._1920x.webp';
+import PR_layer_2 from '../assets/par_bg_layer_2._1920x.webp';
+import PR_layer_3 from '../assets/par_bg_layer_3._1920x.webp';
+import PR_layer_4 from '../assets/par_bg_layer_4._1920x.webp';
+import PR_layer_5 from '../assets/par_bg_layer_5._1920x.webp';
+import PR_layer_6 from '../assets/par_bg_layer_6._1920x.webp';
+import PR_layer_7 from '../assets/par_bg_layer_7._1920x.webp';
 
 const headerParallax = () => {
   useEffect(() => {

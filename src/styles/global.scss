@@ -133,6 +133,13 @@ p {
   }
 }
 
+.contain {
+  width: clamp(300px, 100%, $element-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 1rem;
+}
+
 
 @media screen and (max-width: $breakpoint) {
 
