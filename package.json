@@ -12,7 +12,7 @@
   "main": "index.js",
   "scripts": {
     "preview": "npm-run-all --parallel watch start:custom",
-    "watch": "browser-sync start -p 'cms.localhost' -f 'public/wp-content/themes/summit-seekers/**/*.php, public/wp-content/themes/summit-seekers/build/*.js, public/wp-content/themes/summit-seekers/build/*.css'",
+    "watch": "browser-sync start -p 'summit.localhost' -f 'public/wp-content/themes/summit-seekers/**/*.php, public/wp-content/themes/summit-seekers/build/*.js, public/wp-content/themes/summit-seekers/build/*.css'",
     "build:custom": "wp-scripts build --output-path=public/wp-content/themes/summit-seekers/build",
     "start:custom": "wp-scripts start --output-path=public/wp-content/themes/summit-seekers/build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +23,7 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.33",
     "framer-motion": "^10.16.16",
-    "react-icons": "^4.12.0"
+    "react-icons": "^4.12.0",
+    "swiper": "^11.0.5"
   }
 }

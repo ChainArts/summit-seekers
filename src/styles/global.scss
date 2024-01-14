@@ -12,6 +12,8 @@
 
 html{
   scrollbar-width: thin;
+  scrollbar-color: var(--brown) var(--white);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,6 +22,7 @@ body {
     font-weight: normal;
     background-color: var(--white);
     color: var(--gray);
+    position: relative;
 }
 
 

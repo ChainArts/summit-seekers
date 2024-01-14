@@ -1,5 +1,5 @@
 #!/bin/zsh
-# rm -rf ./public/wp-content/themes/summit-seekers/
+ rm -rf ./public/wp-content/themes/summit-seekers/
 
 plugins=("carousel")
 

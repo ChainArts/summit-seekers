@@ -1,4 +1,10 @@
-<?php get_header();
+<?php get_header();?>
+
+<nav id="nav-hook">
+  <!--react-->
+</nav>
+
+<?php
 
 if(has_category('Expedition')) {
     include(get_template_directory() . "/templates/expedition.php");

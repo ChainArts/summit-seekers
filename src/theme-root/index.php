@@ -1,7 +1,7 @@
 <?php
 
 get_header(); ?>
-  <header id="header-hook">
+<header id="parallax-header-hook" style="min-height: 140vh, height: 100%">
     <!--react-->
 </header>
 

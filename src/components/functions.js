@@ -1,5 +1,12 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+
+export const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
 
 export const getCategoryID = async (categoryName) => {
   try {

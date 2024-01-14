@@ -1,10 +1,9 @@
 import "./frontend.scss";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import { useFetchPosts } from "../../functions";
-import { LiaArrowRightSolid } from "react-icons/lia";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { LiaArrowRightSolid, LiaAngleLeftSolid, LiaAngleRightSolid } from "react-icons/lia";
+import { Swiper, SwiperSlide} from "swiper/react";
 
 const carousel = document.querySelectorAll(".carousel-update");
 
@@ -18,36 +17,45 @@ if (carousel !== null) {
 }
 
 function Carousel(data) {
+    const swiperRef = useRef(null);
     const { posts, loading, error } = useFetchPosts(data.categoryID);
 
+    const getSwiperInstance = (swiper) => {
+        swiperRef.current = swiper;
+    };
+
     return (
-        <Swiper
+        
+        <div className="slide-swiper-container">
+            <CarouselButton direction="prev" swiperRef={swiperRef}/>
+            <Swiper
+            ref={swiperRef}
             spaceBetween={48}
             slidesPerView={3}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
-        >
+                loop={true}
+                onSwiper={getSwiperInstance}
+            >
                 {posts.map((post) => (
                     <SwiperSlide>
                         <CarouselItem key={post.id} data={post} />
                     </SwiperSlide>
                 ))}
-        </Swiper>
+            </Swiper>
+            <CarouselButton direction="next" swiperRef={swiperRef} />
+        </div>
     );
 }
 
-function CarouselButton({ direction, onClick }) {
+function CarouselButton({ direction, swiperRef}) {
+    const swiper = swiperRef.current;
     return (
-        <button
-            className={`carousel-button carousel-button-${direction}`}
-            onClick={onClick}
-        >
-            {direction}
-        </button>
+        <div onClick={() =>  ( direction === 'next' ) ? swiper.slideNext() : swiper.slidePrev()} className={`cursor-anchor carousel-button carousel-button-${direction}`}>
+            {direction === "next" ? <LiaAngleRightSolid /> : <LiaAngleLeftSolid />}
+        </div>
     );
 }
 
-function CarouselItem({ data }) {
+function CarouselItem ({ data }) {
     return (
         <a href={data.link} className="card">
             <Image id={data.featured_media} />
@@ -91,7 +99,7 @@ export function useImageUrl(image_id) {
         async function fetchData() {
             try {
                 const response = await fetch(
-                    `http://cms.localhost/wp-json/wp/v2/media/${image_id}`
+                    `${window.location.origin}/wp-json/wp/v2/media/${image_id}`
                 );
                 if (!response.ok) {
                     throw new Error("Network response was not ok");

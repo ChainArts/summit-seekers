@@ -1,12 +1,16 @@
 nav {
-  position: relative;
+  position: sticky;
+  top: 1rem;
   z-index: 101;
   background-color: var(--brown);
+  background: rgba( 113, 105, 99, 0.75 );
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
   border-radius: 3rem;
   color: var(--white);
   padding: 1.5rem;
   width: 80%;
-  left: 10%;
+  margin: 0 auto;
   margin-bottom: var(--inner-section-padding);
   & ul{
     display: flex;
@@ -16,5 +20,14 @@ nav {
     & li:first-child{
       margin-right: auto;
     }
+  }
+
+  span{
+    cursor: pointer;
+  }
+
+  a {
+    color: var(--white);
+    text-decoration: none;
   }
 }
