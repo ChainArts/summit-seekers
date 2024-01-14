@@ -1,13 +1,14 @@
 <?php
 
 get_header(); ?>
-<header id="parallax-header-hook" style="min-height: 140vh, height: 100%">
+<div id="parallax-header-hook" style="min-height: 140vh, height: 100%">
     <!--react-->
+</div>
+<header>
+    <nav id="nav-hook">
+    <!--react-->
+    </nav>
 </header>
-
-<nav id="nav-hook">
-  <!--react-->
-</nav>
 <main>
 
 <?php if (have_posts()) {
