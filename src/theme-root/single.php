@@ -1,8 +1,9 @@
 <?php get_header();?>
-
-<nav id="nav-hook">
-  <!--react-->
-</nav>
+<header>
+    <nav id="nav-hook">
+    <!--react-->
+    </nav>
+</header>
 
 <?php
 

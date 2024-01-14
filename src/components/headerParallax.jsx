@@ -9,35 +9,6 @@ import PR_layer_5 from '../assets/par_bg_layer_5.webp';
 import PR_layer_6 from '../assets/par_bg_layer_6.webp';
 import PR_layer_7 from '../assets/par_bg_layer_7.webp';
 
-
-const Preloader = ({ images, children }) => {
-    const [imagesLoaded, setImagesLoaded] = useState(false);
-
-    useEffect(() => {
-        const preloadImages = async () => {
-            const imagePromises = images.map((src) => {
-                return new Promise((resolve, reject) => {
-                    const img = new Image();
-                    img.src = src;
-                    img.onload = resolve;
-                    img.onerror = reject;
-                });
-            });
-
-            try {
-                await Promise.all(imagePromises);
-                setImagesLoaded(true);
-            } catch (error) {
-                console.error("Error loading images:", error);
-            }
-        };
-
-        preloadImages();
-    }, [images]);
-
-    return imagesLoaded ? children : null;
-};
-
 const headerParallax = () => {
     
     const containerRef = useRef(null);
