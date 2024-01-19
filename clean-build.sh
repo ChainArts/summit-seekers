@@ -1,10 +1,10 @@
 #!/bin/zsh
- rm -rf ./public/wp-content/themes/summit-seekers/
+#  rm -rf ./public/wp-content/themes/summit-seekers/
 
-# plugins=("carousel")
+plugins=("booking-grid")
 
-# for plugin in "${plugins[@]}"; do
-#     rm -rf ./public/wp-content/plugins/$plugin/
-# done
+for plugin in "${plugins[@]}"; do
+    rm -rf ./public/wp-content/plugins/$plugin/
+done
 
 ./build.sh

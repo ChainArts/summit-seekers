@@ -1,5 +1,4 @@
-<footer>
-    <?php
+<?php
     function fetch_post($postname)
     {
         $category_id = get_cat_ID($postname);
@@ -13,7 +12,29 @@
 
     function render_footer_links()
     {
-        //Code
+        $footer = fetch_post("Footer");
+
+        if (empty($footer)) {
+            return;
+        }
+
+        $content = $footer[0]->post_content;
+        $content = str_replace("\n", "", $content);
+        $split_content = explode("</ul>", $content);
+
+
+        ?>
+       
+            <div class="continents">
+                <?php
+                if (!empty($split_content)) {
+                    foreach ($split_content as $part) {
+                        echo '<div>' . $part . '</ul></div>';
+                    }
+                }
+                ?>
+            </div>
+            <?php
     }
 
     function render_contact()
@@ -40,37 +61,11 @@
         <?php
     }
 
-
-
-    function render_footer()
-    {
-        $footer = fetch_post("Footer");
-
-        if(empty($footer)){
-            return;
-        }
-
-        $content = $footer[0]->post_content;
-        $content = str_replace("\n", "", $content);
-        $split_content = explode("</ul>", $content);
-
-
-        ?>
-       
-        <div class="continents">
-            <?php
-            if (!empty($split_content)) {
-                foreach ($split_content as $part) {
-                    echo '<div>' . $part . '</ul></div>';
-                }
-            }
-            ?>
-        </div>
-        <?php
-        render_contact();
-    }
-
-    render_footer();
+    ?>
+    <footer>
+    <?php
+    render_footer_links();  
+    render_contact();
     ?>
 </footer>
 <?php wp_footer(); ?>

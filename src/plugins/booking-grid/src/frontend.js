@@ -25,15 +25,11 @@ function BookingGrid(data) {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <>
-      {posts.map(post => (
-        <div key={post.id}>
-          <h3>{post.title.rendered}</h3>
-          <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-        </div>
-      ))}
-    </>
+    <div id="booking-grid">
+      <div class="booking-grid-item">
+        <h2>Booking Grid</h2>
+      </div>
+    </div>
   );
 
 }
-
