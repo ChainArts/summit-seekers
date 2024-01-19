@@ -57,6 +57,16 @@ wp-block-image {
     user-select: none;
 }
 
+.wp-block-social-link{
+    color: var(--white) !important;
+    background-color: transparent !important;
+    scale: 1.5;
+}
+
+footer .wp-block-group{
+    gap: 3rem;
+}
+
 @media screen and (max-width: $breakpoint) {
     .wp-block-button {
         font-size: 0.875rem;

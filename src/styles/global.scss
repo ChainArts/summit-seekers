@@ -62,6 +62,56 @@ h1 {
     font-family: "Guilty Pleasure";
     color: var(--green-transparent);
     text-align: center;
+    padding: calc(2* (var(--inner-section-padding))) 0;
+    background-size: 100%;
+}
+
+#expeditions, #adventure, #about{
+    position: relative;
+    z-index: -1;
+}
+
+#expeditions::after, #adventure::after, #about::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -2;
+    opacity: .75;
+    padding-top: 15rem;
+}
+
+#expeditions::after{
+    background-image: url("../assets/expeditions_1400.webp");
+    padding: 0;
+}
+
+#expeditions::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--lighter-blue) 25%, var(--light-blue) 85%, rgba(255, 255, 255, 0) 100% );
+    z-index: -3;
+    padding-top: 15rem;
+}
+
+#adventure::after{
+    background-image: url("../assets/adventure_1400.webp");
+    opacity: 0.25;
+}
+
+#about::after{
+    background-image: url("../assets/about_1400.webp");
+    z-index: 0;
+    padding-top: 30rem;
 }
 
 h2,
