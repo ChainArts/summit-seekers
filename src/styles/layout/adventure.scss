@@ -4,6 +4,7 @@ main.adventure {
     display: grid;
     grid-template-columns: 3fr 4fr;
     gap: var(--large-gap);
+    margin-bottom: var(--large-gap);
 
     .adventure-image {
         background-color: gray;
