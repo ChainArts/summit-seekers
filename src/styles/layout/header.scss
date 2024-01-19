@@ -41,11 +41,38 @@
   }
 }
 
+.hero-nav{
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 2rem 3rem;
+
+    & ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--inner-section-padding);
+    }
+
+    & a{
+        color: var(--brown);
+        text-decoration: none;
+    }
+
+}
+
 @media screen and (max-width: $breakpoint) {
     .headerParallax{
         & .hero-text{
             font-size: 4rem;
             width: 100%;
         }
+    }
+
+    #hero-layer{
+        scale: 2;
+        left: 30%;
     }
 }

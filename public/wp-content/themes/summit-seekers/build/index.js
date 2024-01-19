@@ -2,9 +2,9 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/components/customCursor.jsx":
+/***/ "./src/components/CustomCursor.jsx":
 /*!*****************************************!*\
-  !*** ./src/components/customCursor.jsx ***!
+  !*** ./src/components/CustomCursor.jsx ***!
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -101,72 +101,9 @@ const CustomCursor = () => {
 
 /***/ }),
 
-/***/ "./src/components/functions.js":
-/*!*************************************!*\
-  !*** ./src/components/functions.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getCategoryID: () => (/* binding */ getCategoryID),
-/* harmony export */   scrollToTop: () => (/* binding */ scrollToTop),
-/* harmony export */   useFetchPosts: () => (/* binding */ useFetchPosts)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-};
-const getCategoryID = async categoryName => {
-  try {
-    const response = await fetch(`${window.location.origin}/wp-json/wp/v2/categories`);
-    const categories = await response.json();
-    const category = categories.find(cat => cat.name.toLowerCase() === categoryName.toLowerCase());
-    return category ? category.id : null;
-  } catch (error) {
-    console.error("Error fetching categories:", error);
-    return null;
-  }
-};
-const useFetchPosts = categoryName => {
-  const [posts, setPosts] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-  const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
-  const [error, setError] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    setError(null);
-    const fetchPosts = async () => {
-      const categoryId = await getCategoryID(categoryName);
-      if (categoryId) {
-        fetch(`${window.location.origin}/wp-json/wp/v2/posts?categories=${categoryId}&_embed`).then(response => response.json()).then(data => {
-          setPosts(data);
-          setLoading(false);
-        }).catch(error => {
-          setError(error);
-          setLoading(false);
-        });
-      } else {
-        setLoading(false);
-      }
-    };
-    fetchPosts();
-  }, [categoryName]);
-  return {
-    posts,
-    loading,
-    error
-  };
-};
-
-/***/ }),
-
-/***/ "./src/components/headerParallax.jsx":
+/***/ "./src/components/HeaderParallax.jsx":
 /*!*******************************************!*\
-  !*** ./src/components/headerParallax.jsx ***!
+  !*** ./src/components/HeaderParallax.jsx ***!
   \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -197,7 +134,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const headerParallax = () => {
+const HeroNav = () => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "hero-nav"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "/#booking"
+  }, "Booking")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "/#expeditions"
+  }, "Expeditions")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "/#adventure"
+  }, "Adventure")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "/#about"
+  }, "About"))));
+};
+const HeaderParallax = () => {
   const containerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const [imagesLoaded, setImagesLoaded] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const {
@@ -256,7 +206,7 @@ const headerParallax = () => {
       duration: 0.8,
       ease: [.14, .8, .4, 1]
     }
-  }, imagesLoaded && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
+  }, imagesLoaded && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(HeroNav, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
     className: "parallax-layer",
     style: {
       y: yRangeLayer1,
@@ -324,6 +274,7 @@ const headerParallax = () => {
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: _assets_par_bg_layer_6_webp__WEBPACK_IMPORTED_MODULE_6__
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
+    id: "hero-layer",
     className: "parallax-layer",
     style: {
       y: yRangeLayer7,
@@ -341,13 +292,13 @@ const headerParallax = () => {
     }
   }));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (headerParallax);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderParallax);
 
 /***/ }),
 
-/***/ "./src/components/navBar.jsx":
+/***/ "./src/components/NavBar.jsx":
 /*!***********************************!*\
-  !*** ./src/components/navBar.jsx ***!
+  !*** ./src/components/NavBar.jsx ***!
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -382,6 +333,69 @@ const NavBar = () => {
   }, "About")));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavBar);
+
+/***/ }),
+
+/***/ "./src/components/functions.js":
+/*!*************************************!*\
+  !*** ./src/components/functions.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getCategoryID: () => (/* binding */ getCategoryID),
+/* harmony export */   scrollToTop: () => (/* binding */ scrollToTop),
+/* harmony export */   useFetchPosts: () => (/* binding */ useFetchPosts)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
+const getCategoryID = async categoryName => {
+  try {
+    const response = await fetch(`${window.location.origin}/wp-json/wp/v2/categories`);
+    const categories = await response.json();
+    const category = categories.find(cat => cat.name.toLowerCase() === categoryName.toLowerCase());
+    return category ? category.id : null;
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    return null;
+  }
+};
+const useFetchPosts = categoryName => {
+  const [posts, setPosts] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
+  const [error, setError] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    setError(null);
+    const fetchPosts = async () => {
+      const categoryId = await getCategoryID(categoryName);
+      if (categoryId) {
+        fetch(`${window.location.origin}/wp-json/wp/v2/posts?categories=${categoryId}&_embed`).then(response => response.json()).then(data => {
+          setPosts(data);
+          setLoading(false);
+        }).catch(error => {
+          setError(error);
+          setLoading(false);
+        });
+      } else {
+        setLoading(false);
+      }
+    };
+    fetchPosts();
+  }, [categoryName]);
+  return {
+    posts,
+    loading,
+    error
+  };
+};
 
 /***/ }),
 
@@ -14993,9 +15007,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_headerParallax__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/headerParallax */ "./src/components/headerParallax.jsx");
-/* harmony import */ var _components_navBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/navBar */ "./src/components/navBar.jsx");
-/* harmony import */ var _components_customCursor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/customCursor */ "./src/components/customCursor.jsx");
+/* harmony import */ var _components_HeaderParallax__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/HeaderParallax */ "./src/components/HeaderParallax.jsx");
+/* harmony import */ var _components_NavBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/NavBar */ "./src/components/NavBar.jsx");
+/* harmony import */ var _components_CustomCursor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/CustomCursor */ "./src/components/CustomCursor.jsx");
 /* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
 
 
@@ -15009,9 +15023,9 @@ const renderComponent = (Component, hook) => {
     react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Component, null), document.getElementById(hook));
   }
 };
-renderComponent(_components_headerParallax__WEBPACK_IMPORTED_MODULE_2__["default"], 'parallax-header-hook');
-renderComponent(_components_navBar__WEBPACK_IMPORTED_MODULE_3__["default"], 'nav-hook');
-renderComponent(_components_customCursor__WEBPACK_IMPORTED_MODULE_4__["default"], 'cursor-hook');
+renderComponent(_components_HeaderParallax__WEBPACK_IMPORTED_MODULE_2__["default"], 'parallax-header-hook');
+renderComponent(_components_NavBar__WEBPACK_IMPORTED_MODULE_3__["default"], 'nav-hook');
+renderComponent(_components_CustomCursor__WEBPACK_IMPORTED_MODULE_4__["default"], 'cursor-hook');
 })();
 
 /******/ })()

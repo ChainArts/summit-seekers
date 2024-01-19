@@ -9,8 +9,21 @@ import PR_layer_5 from '../assets/par_bg_layer_5.webp';
 import PR_layer_6 from '../assets/par_bg_layer_6.webp';
 import PR_layer_7 from '../assets/par_bg_layer_7.webp';
 
-const headerParallax = () => {
-    
+const HeroNav = () => {
+    return (
+        <div className="hero-nav">
+            <ul>
+                <li><a href="/#booking">Booking</a></li>
+                <li><a href="/#expeditions">Expeditions</a></li>
+                <li><a href="/#adventure">Adventure</a></li>
+                <li><a href="/#about">About</a></li>
+            </ul>
+        </div>
+    );
+}
+
+const HeaderParallax = () => {
+
     const containerRef = useRef(null);
     const [imagesLoaded, setImagesLoaded] = useState(false);
     const { scrollYProgress } = useScroll({
@@ -20,15 +33,15 @@ const headerParallax = () => {
 
     useEffect(() => {
         const imagesToLoad = [PR_layer_1, PR_layer_2, PR_layer_3, PR_layer_4, PR_layer_5, PR_layer_6, PR_layer_7];
-        
+
         Promise.all(imagesToLoad.map(src => new Promise((resolve, reject) => {
             const img = new Image();
             img.src = src;
             img.onload = resolve;
             img.onerror = reject;
         })))
-        .then(() => setImagesLoaded(true))
-        .catch(error => console.error("Error loading images:", error));
+            .then(() => setImagesLoaded(true))
+            .catch(error => console.error("Error loading images:", error));
     }, []);
 
 
@@ -43,9 +56,10 @@ const headerParallax = () => {
     const yRangeTrans = useTransform(scrollYProgress, [.45, .9], [200, 75], { ease: cubicBezier(.14, .8, .4, 1) });
 
     return (
-        <motion.div ref={containerRef} className="headerParallax" initial={{filter: "blur(20px)"}} animate={{filter: "blur(0px)"}} transition={{delay: 0.4, duration: 0.8, ease: [.14,.8,.4,1]}}>
+        <motion.div ref={containerRef} className="headerParallax" initial={{ filter: "blur(20px)" }} animate={{ filter: "blur(0px)" }} transition={{ delay: 0.4, duration: 0.8, ease: [.14, .8, .4, 1] }}>
             {imagesLoaded && (
                 <>
+                    <HeroNav />
                     <motion.div className="parallax-layer" style={{ y: yRangeLayer1, zIndex: 1 }} >
                         <img src={PR_layer_1} />
                     </motion.div>
@@ -59,22 +73,22 @@ const headerParallax = () => {
                     <motion.div className="parallax-layer" style={{ y: yRangeLayer4, zIndex: 5 }} >
                         <img src={PR_layer_4} />
                     </motion.div>
-            
+
                     <motion.div className="parallax-layer" style={{ y: yRangeLayer5, zIndex: 6 }} >
                         <img src={PR_layer_5} style={{ objectPosition: "center" }} />
                     </motion.div>
-            
+
                     <motion.div className="parallax-layer" style={{ y: yRangeLayer6, zIndex: 7 }} >
                         <img src={PR_layer_6} />
                     </motion.div>
-                    <motion.div className="parallax-layer" style={{ y: yRangeLayer7, zIndex: 8, height: "auto", bottom: 0, top: "auto" }}>
+                    <motion.div id="hero-layer" className="parallax-layer" style={{ y: yRangeLayer7, zIndex: 8, height: "auto", bottom: 0, top: "auto" }}>
                         <img src={PR_layer_7} />
                     </motion.div>
                 </>)}
-                    <motion.div className="hero-transition-gradient" style={{ y: yRangeTrans }}></motion.div>
-                    
-            </motion.div>
+            <motion.div className="hero-transition-gradient" style={{ y: yRangeTrans }}></motion.div>
+
+        </motion.div>
     );
 }
 
-export default headerParallax;
+export default HeaderParallax;

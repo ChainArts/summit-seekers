@@ -15,6 +15,7 @@
 @media (max-width: $breakpoint) {
     .about{
         background: linear-gradient(180deg, rgba(0, 0, 0 ,0) 0%, var(--dark-green) 8%);
-    };
+        padding-top: var(--large-gap);
+    }
 
 }
