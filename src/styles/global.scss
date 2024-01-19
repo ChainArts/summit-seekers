@@ -145,6 +145,8 @@ p {
     &.hovered {
         & .cursor-bubble {
             padding: 3rem !important;
+            transform: translate(-30%, -45%);
+            
         }
     }
 
@@ -156,9 +158,11 @@ p {
         padding: 1.5rem;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-35%, 0);
         transition: all 0.4s var(--ease);
     }
+
+    
 
     .cursor-box {
         color: var(--brown);
@@ -253,6 +257,19 @@ p {
     h1 {
         font-size: 4rem;
     }
+
+    #expeditions::before{
+        padding-top: 5rem;
+    }
+
+    #adventure::after{
+        padding-top: 5rem;
+    }
+
+    #about::after{
+        padding-top: 15rem;
+    }
+
 
     h2,
     #header h1 {

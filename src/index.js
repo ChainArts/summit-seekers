@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom'
 import HeaderParallax from './components/headerParallax'
 import NavBar from './components/navBar'
 import CustomCursor from './components/customCursor'
-import Footer from './components/footer'
 
 
 
@@ -20,4 +19,3 @@ const renderComponent = (Component, hook) => {
 renderComponent(HeaderParallax, 'parallax-header-hook')
 renderComponent(NavBar, 'nav-hook')
 renderComponent(CustomCursor, 'cursor-hook')
-renderComponent(Footer, 'footer-hook')

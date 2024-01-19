@@ -46,6 +46,7 @@ footer {
             font-family: "Guilty Pleasure";
             font-size: 4rem;
             margin-bottom: var(--inner-component-padding);
+            user-select: none;
         }
 
         ul {
