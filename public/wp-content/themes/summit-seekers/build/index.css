@@ -124,6 +124,87 @@ table {
   font-family: "Inter";
 }
 
+.custom-cursor {
+  line-height: 1;
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+}
+.custom-cursor.hovered .cursor-bubble {
+  padding: 3rem !important;
+  transform: translate(-30%, -45%);
+}
+.custom-cursor .cursor-bubble {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35%, 0);
+  transition: all 0.4s var(--ease);
+}
+.custom-cursor .cursor-box {
+  color: var(--brown);
+  position: absolute;
+  left: 0.5em;
+  right: 0.5em;
+  top: 0.5em;
+  bottom: 0.5em;
+  transition: all 0.4s var(--ease);
+}
+.custom-cursor .cursor-box .corner {
+  width: 0.5em;
+  height: 0.5em;
+}
+.custom-cursor .cursor-box .corner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--brown);
+}
+.custom-cursor .cursor-box .corner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--brown);
+}
+.custom-cursor .cursor-box .corner.left-top {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.custom-cursor .cursor-box .corner.right-top {
+  top: 0;
+  right: 0;
+  position: absolute;
+  transform: rotate(90deg);
+}
+.custom-cursor .cursor-box .corner.left-bottom {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  transform: rotate(270deg);
+}
+.custom-cursor .cursor-box .corner.right-bottom {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 932px) {
+  .custom-cursor {
+    display: none;
+  }
+}
 .has-text-align-center {
   text-align: center;
 }
@@ -340,82 +421,6 @@ p {
   line-height: 170%;
 }
 
-.custom-cursor {
-  line-height: 1;
-  position: fixed;
-  z-index: 999;
-  pointer-events: none;
-}
-.custom-cursor.hovered .cursor-bubble {
-  padding: 3rem !important;
-  transform: translate(-30%, -45%);
-}
-.custom-cursor .cursor-bubble {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-  left: 50%;
-  top: 50%;
-  transform: translate(-35%, 0);
-  transition: all 0.4s var(--ease);
-}
-.custom-cursor .cursor-box {
-  color: var(--brown);
-  position: absolute;
-  left: 0.5em;
-  right: 0.5em;
-  top: 0.5em;
-  bottom: 0.5em;
-  transition: all 0.4s var(--ease);
-}
-.custom-cursor .cursor-box .corner {
-  width: 0.5em;
-  height: 0.5em;
-}
-.custom-cursor .cursor-box .corner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background: var(--brown);
-}
-.custom-cursor .cursor-box .corner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--brown);
-}
-.custom-cursor .cursor-box .corner.left-top {
-  top: 0;
-  left: 0;
-  position: absolute;
-}
-.custom-cursor .cursor-box .corner.right-top {
-  top: 0;
-  right: 0;
-  position: absolute;
-  transform: rotate(90deg);
-}
-.custom-cursor .cursor-box .corner.left-bottom {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  transform: rotate(270deg);
-}
-.custom-cursor .cursor-box .corner.right-bottom {
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  transform: rotate(180deg);
-}
-
 .contain {
   width: clamp(300px, 100%, 1300px);
   margin-right: auto;
@@ -430,9 +435,6 @@ p {
     --small-padding: 0.75rem;
     --large-gap: 2.25rem;
   }
-  .custom-cursor {
-    display: none;
-  }
   body {
     font-size: 1rem;
   }
@@ -445,8 +447,12 @@ p {
   #adventure::after {
     padding-top: 5rem;
   }
+  #about {
+    padding-bottom: 2rem;
+  }
   #about::after {
-    padding-top: 15rem;
+    padding-top: 13rem;
+    opacity: 1;
   }
   h2,
   #header h1 {
@@ -502,10 +508,33 @@ p {
      object-position: center;
 }
 
+.hero-nav {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 2rem 3rem;
+}
+.hero-nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--inner-section-padding);
+}
+.hero-nav a {
+  color: var(--brown);
+  text-decoration: none;
+}
+
 @media screen and (max-width: 932px) {
   .headerParallax .hero-text {
     font-size: 4rem;
     width: 100%;
+  }
+  #hero-layer {
+    scale: 2;
+    left: 30%;
   }
 }
 header {
@@ -657,6 +686,7 @@ main.adventure p:not(.meta) {
 @media (max-width: 932px) {
   .about {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, var(--dark-green) 8%);
+    padding-top: var(--large-gap);
   }
 }
 footer {

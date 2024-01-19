@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import HeaderParallax from './components/headerParallax'
-import NavBar from './components/navBar'
-import CustomCursor from './components/customCursor'
+import HeaderParallax from './components/HeaderParallax'
+import NavBar from './components/NavBar'
+import CustomCursor from './components/CustomCursor'
 
 
 
