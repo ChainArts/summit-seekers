@@ -51,25 +51,48 @@ $grey: #434343;
             border: 1px solid #54906d;
         }
 
-        .date p {
+        .date {
+          display: flex;
+          justify-content: space-between;
+          width: 5.5rem;
+        span {
             text-transform: uppercase;
             font-weight: 500;
             line-height: 100%;
             font-size: 1.5rem;
             white-space: nowrap;
         }
+      }
 
         svg {
-            width: 1.5rem;
-            height: 1.5rem;
-            fill: #54906d;
-            font-size: 3rem;
+            height: 2rem;
+            margin-right: 1rem;
         }
     }
 
     a {
         text-decoration: none;
         color: inherit;
+    }
+
+    a:hover, a:active {
+
+        svg {
+            animation: arrow 1s infinite;
+        }
+    }
+}
+
+//animation for the arrow
+@keyframes arrow {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(0.5rem);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
