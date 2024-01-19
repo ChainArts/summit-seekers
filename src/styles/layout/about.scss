@@ -1,0 +1,13 @@
+.about {
+    width: 100%;
+    background-color: var(--dark-green);    
+    padding: var(--large-gap) 0;
+
+    h2, p {
+        color: var(--white);
+    }
+
+    p {
+        margin-bottom: var(--small-padding);
+    }
+}

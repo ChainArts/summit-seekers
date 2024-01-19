@@ -82,7 +82,7 @@ section {
 }
 
 p {
-    @include center-margin($element-width);
+    @include center-margin(900px);
     line-height: 170%;
 }
 
