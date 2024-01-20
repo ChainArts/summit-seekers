@@ -1,12 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
-export const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-};
-
+import { useEffect, useState } from 'react';
 
 export const getCategoryID = async (categoryName) => {
   try {

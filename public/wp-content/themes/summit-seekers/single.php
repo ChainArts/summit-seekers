@@ -1,11 +1,4 @@
-<?php get_header();?>
-<header>
-    <nav id="nav-hook">
-    <!--react-->
-    </nav>
-</header>
-
-<?php
+<?php get_header();
 
 if(has_category('Booking')) {
     include(get_template_directory() . "/templates/booking.php");
