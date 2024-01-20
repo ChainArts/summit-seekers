@@ -5,6 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  overflow: hidden;
+  user-select: none;
   & .hero-transition-gradient{
     height: 42vh;
     width: 100%;
@@ -43,11 +45,11 @@
 
 .hero-nav{
     position: absolute;
-    top: 2rem;
+    top: var(--inner-section-padding);
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1000;
-    padding: 2rem 3rem;
+    z-index: 10;
+    padding: 2rem 3.5rem;
 
     & ul{
     display: flex;
@@ -57,10 +59,72 @@
     }
 
     & a{
+        position: relative;
         color: var(--brown);
         text-decoration: none;
+        z-index: 100;
     }
 
+    & .hero-nav-styling{
+        position: absolute;
+        left: 0.5rem;
+        right: 0.5rem;
+        top: 0.5rem;
+        bottom: 0.5rem;
+        
+        @include corner-styling;
+    }
+}
+
+.scroll-marquee{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 65vh;
+    padding: 2rem;
+    z-index: 11;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 1rem;
+
+    & .scroll-indicator{
+        position: absolute;
+        height: 3rem;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: hidden;
+        padding: 1px;
+
+        & .scroll-indicator-slider{
+            position: absolute;
+            height: 50%;
+            left: 0;
+            width: 3px;
+            background: var(--brown);
+        }
+    }
+
+    & .scroll-indicator-text{
+        transform-origin: top center;
+        line-height: 1;
+        position: relative;
+        padding: 1rem 1.5rem;
+        margin-top: 5rem;
+        & .scroll-marquee-styling{
+            position: absolute;
+            left: 0.5rem;
+            right: 0.5rem;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            
+            @include corner-styling(0.5rem);
+        }
+    }
 }
 
 @media screen and (max-width: $breakpoint) {
@@ -74,5 +138,21 @@
     #hero-layer{
         scale: 2;
         left: 30%;
+    }
+
+    .hero-nav{
+        top: calc(2 * var(--inner-section-padding));
+        padding: 1.25rem 1.5rem;
+
+        & ul{
+            gap: var(--inner-component-padding);
+        }
+        .hero-nav-styling{
+            & .corner{
+                width: 0.5rem;
+                height: 0.5rem;
+            }
+        }
+
     }
 }
