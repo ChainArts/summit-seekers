@@ -14,7 +14,7 @@
         <meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/favicons/browserconfig.xml">
         <meta name="theme-color" content="#54906d">
 
-                <meta property="og:image:width" content="279">
+        <meta property="og:image:width" content="279">
         <meta property="og:image:height" content="279">
         <meta property="og:description" content="Elevate Your Adventure, Conquer the Summits Responsibly. Welcome to Summit Seekers, where your passion for adventure meets the majesty of the mountains. Under the guidance of Andrew Clarke, we invite you to embark on thrilling expeditions that honor the beauty of nature.">
         <meta property="og:title" content="Summit Seekers">

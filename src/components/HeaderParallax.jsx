@@ -44,7 +44,7 @@ const HeroNav = () => {
 
 const ScrollMarquee = () => {
     return (
-        <a className="scroll-marquee" href="/#booking">
+        <a className="scroll-marquee" href="/#booking" style={{zIndex: 3}}>
             <motion.div className="scroll-indicator">
                 <motion.div className="scroll-indicator-slider" variants={scrollIndicator} animate="animate" />
             </motion.div>

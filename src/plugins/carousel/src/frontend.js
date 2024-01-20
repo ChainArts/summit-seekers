@@ -30,8 +30,16 @@ function Carousel(data) {
             <CarouselButton direction="prev" swiperRef={swiperRef}/>
             <Swiper
             ref={swiperRef}
-            spaceBetween={48}
-            slidesPerView={3}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    1256: {
+                        slidesPerView: 3,
+                        spaceBetween: 48
+                    }
+                }}
                 loop={true}
                 onSwiper={getSwiperInstance}
             >

@@ -21,7 +21,6 @@
         <meta property="og:url" content="https://vm-orange.multimediatechnology.at">
         <meta property="og:image" content="https://vm-orange.multimediatechnology.at/<?php echo get_template_directory_uri(); ?>/favicons/og-image.jpg">
 
-
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?> >

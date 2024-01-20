@@ -20,6 +20,6 @@
   font-family: 'Inter';
 }
 
-$breakpoint: 932px;
+$breakpoint: 1000px;
 $element-width: 1300px;
 $half-width: calc(($element-width / 2) - (var(--large-gap) / 2))

@@ -58,7 +58,7 @@ body {
 
 
 h1 {
-    @include heading(12.5rem);
+    @include heading(11.5rem);
     font-family: "Guilty Pleasure";
     color: var(--green-transparent);
     text-align: center;
