@@ -21,3 +21,14 @@
     }
 
 }
+
+main.booking {
+    @include center-margin();
+    padding: 0 1rem;
+
+    .booking-image {
+        width: 100%;
+        height: 350px;
+    }
+    
+}
