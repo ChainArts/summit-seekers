@@ -34,7 +34,7 @@ main.booking {
     .booking-container {
         margin: var(--inner-component-padding) 0;
         display: grid;
-        gap: var(--small-padding);
+        gap: var(--inner-section-padding);
         grid-template-columns: 1fr min-content 1fr;
 
         &>div {
@@ -77,7 +77,22 @@ main.booking {
             }
         }
     }
+}
 
+@media screen and (max-width: $breakpoint) {
+    main.booking {
+        .booking-container {
+            grid-template-columns: 1fr;
+            gap: var(--inner-section-padding);
 
+            .pipe {
+                display: none;
+            }
+
+            .wp-block-columns .wp-block-column p:first-child {
+                @include heading(1.25rem);
+            }
+        }
+    }
     
 }
