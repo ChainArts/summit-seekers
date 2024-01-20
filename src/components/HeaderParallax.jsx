@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useTransform, useScroll, cubicBezier } from "framer-motion";
-
+import useFetchMenu from "./useFetchMenu";
 import PR_layer_1 from '../assets/par_bg_layer_1.webp';
 import PR_layer_2 from '../assets/par_bg_layer_2.webp';
 import PR_layer_3 from '../assets/par_bg_layer_3.webp';
@@ -12,7 +12,7 @@ import PR_layer_7 from '../assets/par_bg_layer_7.webp';
 const scrollIndicator = {
     animate: {
         scaleY: [1, 0.2],
-        y: ["-4rem","4rem"],
+        y: ["-4rem", "4rem"],
         transition: {
             duration: 2,
             ease: "linear",
@@ -24,13 +24,17 @@ const scrollIndicator = {
 }
 
 const HeroNav = () => {
+
+    const { menu } = useFetchMenu("main");
+
     return (
         <div className="hero-nav">
             <ul>
-                <li><a href="/#booking">Booking</a></li>
-                <li><a href="/#expeditions">Expeditions</a></li>
-                <li><a href="/#adventure">Adventure</a></li>
-                <li><a href="/#about">About</a></li>
+                {menu.map((item) => (
+                    <li key={item.id}>
+                        <a href={item.url}>{item.title}</a>
+                    </li>
+                ))}
             </ul>
             <div className="hero-nav-styling">
                 <div className="corner left-top"></div>
@@ -44,16 +48,16 @@ const HeroNav = () => {
 
 const ScrollMarquee = () => {
     return (
-        <a className="scroll-marquee" href="/#booking" style={{zIndex: 3}}>
+        <a className="scroll-marquee" href="/#booking" style={{ zIndex: 3 }}>
             <motion.div className="scroll-indicator">
                 <motion.div className="scroll-indicator-slider" variants={scrollIndicator} animate="animate" />
             </motion.div>
             <motion.span className="scroll-indicator-text" initial={{ scaleY: 0 }} animate={{ scaleY: 1 }} transition={{ delay: 0.5, duration: 0.3, ease: cubicBezier(.14, .8, .4, 1) }}>scroll to discover
                 <div className="scroll-marquee-styling">
-                <div className="corner left-top"></div>
-                <div className="corner left-bottom"></div>
-                <div className="corner right-top"></div>
-                <div className="corner right-bottom"></div>
+                    <div className="corner left-top"></div>
+                    <div className="corner left-bottom"></div>
+                    <div className="corner right-top"></div>
+                    <div className="corner right-bottom"></div>
                 </div>
             </motion.span>
         </a>

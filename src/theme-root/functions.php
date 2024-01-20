@@ -36,3 +36,23 @@ function register_my_menus()
 }
 add_action('init', 'register_my_menus');
 
+# Custom API endpoint for menus
+
+function custom_main_menu()  {
+   return wp_get_nav_menu_items('main');
+}
+
+function custom_footer_menu()  {
+   return wp_get_nav_menu_items('footer');
+}
+
+add_action('rest_api_init', function () {
+  register_rest_route('wp/v2', 'custom-menus/main', array(
+    'methods' => 'GET',
+    'callback' => 'custom_main_menu',
+  ));
+  register_rest_route('wp/v2', 'custom-menus/footer', array(
+    'methods' => 'GET',
+    'callback' => 'custom_footer_menu',
+  ));
+});

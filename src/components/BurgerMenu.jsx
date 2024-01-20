@@ -1,10 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import logo from "../assets/logo.svg";
+import useFetchMenu from "./useFetchMenu";
 
 
 const BurgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { menu } = useFetchMenu("main");
 
     return (
         <>
@@ -22,15 +24,18 @@ const BurgerMenu = () => {
                 </div>
             </motion.div>
             <AnimatePresence mode="wait">
-                {isOpen && (
-                    <motion.nav className="menu-overlay" initial={{ x: "100vw" }} animate={{ x: 0 }} exit={{ x: "-100vw" }} transition={{duration: 0.5, ease: [.14, .8, .4, 1], staggerChildren: 0.01}}>
-                        <ul>
-                            <li><a href="/#" onClick={() => setIsOpen(!isOpen)}><img src={ logo } alt="logo"/></a></li>
-                            <li><a href="/#booking" onClick={()=> setIsOpen(!isOpen)}>Booking</a></li>
-                            <li><a href="/#expeditions" onClick={()=> setIsOpen(!isOpen)}>Expeditions</a></li>
-                            <li><a href="/#adventure" onClick={()=> setIsOpen(!isOpen)}>Adventure</a></li>
-                            <li><a href="/#about" onClick={()=> setIsOpen(!isOpen)}>About</a></li>
-                        </ul>
+                {isOpen && menu && (
+                    <motion.nav className="menu-overlay" initial={{ x: "100vw" }} animate={{ x: 0 }} exit={{ x: "-100vw" }} transition={{ duration: 0.5, ease: [.14, .8, .4, 1] }}>
+                        <motion.ul initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.5, ease: [.14, .8, .4, 1], staggerChildren: 0.1, delayChildren: 0.5 }}>
+                            <motion.li key={5} initial={{ opacity: 0, x: "5rem" }} animate={{ opacity: 1, x: 0 }} transition={{ ease: [.14, .8, .4, 1] }}>
+                                <a href="/#" onClick={() => setIsOpen(!isOpen)}><img src={logo} alt="logo" /></a>
+                            </motion.li>
+                            {menu.map((item) => (
+                                <motion.li key={item.id} initial={{ opacity: 0, x: "5rem" }} animate={{ opacity: 1, x: 0 }} transition={{ease: [.14, .8, .4, 1] }}>
+                                    <a href={item.url} onClick={() => setIsOpen(!isOpen)}>{item.title}</a>
+                                </motion.li>
+                            ))}
+                        </motion.ul>
                     </motion.nav>
                 )}
             </AnimatePresence>

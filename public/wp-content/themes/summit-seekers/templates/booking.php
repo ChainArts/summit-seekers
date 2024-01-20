@@ -46,7 +46,7 @@ if (have_posts()) {
 
                         <?php
                         $args = array(
-                            'name' => 'form'
+                            'name' => 'booking'
                         );
 
                         $form_post_query = new WP_Query($args);
