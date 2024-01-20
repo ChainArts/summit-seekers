@@ -4,7 +4,7 @@ header{
     z-index: 101;
 }
 
-nav{
+.desktop-nav{
   
   background-color: var(--brown);
   background: rgba( 113, 105, 99, 0.75 );
@@ -34,4 +34,19 @@ nav{
     color: var(--white);
     text-decoration: none;
   }
+
+}
+
+.mobile-nav{
+    @include hidden;
+  }
+
+@media screen and (max-width: $breakpoint) {
+    .desktop-nav{
+        @include hidden;
+    }
+
+    .mobile-nav{
+        @include show;
+    }
 }

@@ -1,5 +1,5 @@
 <header>
-    <nav id="site-navigation">
+    <nav id="site-navigation" class="desktop-nav">
         <?php
         $is_home_page = is_front_page();
         $home_link = esc_url(home_url('/'));
@@ -15,4 +15,7 @@
         wp_nav_menu($menu_args);
         ?>
     </nav>
+    <div id="burger-menu-hook" class="mobile-nav">
+        <!--react-->
+    </div>
 </header>

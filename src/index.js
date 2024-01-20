@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import HeaderParallax from './components/HeaderParallax'
 import CustomCursor from './components/CustomCursor'
+import BurgerMenu from './components/BurgerMenu'
 
 import './styles/main.scss'
 
@@ -14,3 +15,4 @@ const renderComponent = (Component, hook) => {
 
 renderComponent(HeaderParallax, 'parallax-header-hook')
 renderComponent(CustomCursor, 'cursor-hook')
+renderComponent(BurgerMenu, 'burger-menu-hook')

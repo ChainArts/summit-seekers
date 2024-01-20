@@ -22,10 +22,14 @@
     font-size: 7rem;
     font-weight: 700;
     text-transform: uppercase;
-    position: relative;
+    position: absolute;
+    top: 35vh;
     text-shadow: 0px 0px 100px rgba(0,0,0,1);
     text-align: center;
     width: 57%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   & .parallax-layer{
@@ -113,7 +117,11 @@
         transform-origin: top center;
         line-height: 1;
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 1rem 1.5rem;
+        text-align: center;
         margin-top: 5rem;
         & .scroll-marquee-styling{
             position: absolute;
@@ -141,18 +149,6 @@
     }
 
     .hero-nav{
-        top: calc(2 * var(--inner-section-padding));
-        padding: 1.25rem 1.5rem;
-
-        & ul{
-            gap: var(--inner-component-padding);
-        }
-        .hero-nav-styling{
-            & .corner{
-                width: 0.5rem;
-                height: 0.5rem;
-            }
-        }
-
+        @include hidden;
     }
 }
