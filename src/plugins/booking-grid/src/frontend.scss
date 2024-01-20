@@ -7,8 +7,8 @@ $grey: #434343;
 
     .booking-grid-later {
         max-height: calc(8.75rem * 3 + 2px);
-        overflow: scroll;
-    
+        overflow: auto;
+
         .booking-grid-item .picture-container {
             display: none;
         }
@@ -19,6 +19,7 @@ $grey: #434343;
     }
 
     .booking-grid-item {
+        max-width: 100%;
         .picture-container {
             width: 100%;
             height: calc(8.75rem * 2 + 2px);
@@ -52,17 +53,17 @@ $grey: #434343;
         }
 
         .date {
-          display: flex;
-          justify-content: space-between;
-          width: 5.5rem;
-        span {
-            text-transform: uppercase;
-            font-weight: 500;
-            line-height: 100%;
-            font-size: 1.5rem;
-            white-space: nowrap;
+            display: flex;
+            justify-content: space-between;
+            width: 5.5rem;
+            span {
+                text-transform: uppercase;
+                font-weight: 500;
+                line-height: 100%;
+                font-size: 1.5rem;
+                white-space: nowrap;
+            }
         }
-      }
 
         svg {
             height: 2rem;
@@ -75,15 +76,14 @@ $grey: #434343;
         color: inherit;
     }
 
-    a:hover, a:active {
-
+    a:hover,
+    a:active {
         svg {
             animation: arrow 1s infinite;
         }
     }
 }
 
-//animation for the arrow
 @keyframes arrow {
     0% {
         transform: translateX(0);
@@ -96,9 +96,32 @@ $grey: #434343;
     }
 }
 
-
 @media screen and (max-width: 900px) {
     .booking-grid {
         grid-template-columns: 1fr;
-  }
+        .booking-grid-content {
+            height: 4.5rem;
+
+            h3 {
+                font-size: 1rem;
+            }
+            p {
+                font-size: 0.75rem;
+            }
+            .date {
+                max-width: 3.5rem;
+                span {
+                    font-size: 1rem !important;
+                }
+            }
+
+            svg {
+                height: 1.2rem !important;
+            }
+        }
+
+        .picture-container {
+            height: 9rem !important;
+        }
+    }
 }
