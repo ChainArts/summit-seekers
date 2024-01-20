@@ -33,14 +33,15 @@ function EditComponent(props) {
   }
 
   return (
-    <div className="makeUpYourBlockTypeName">
-      <h2>Summit Seekers Booking Grid</h2>
-      <p>Requrired Custom-Fields: location, start & end</p>
-      <select onChange={updateCategoryName}>
-        {categories.map(category => (
-          <option key={category.id} value={category.id}>{category.name}</option>
-        ))}
-      </select>
-    </div>
-  )
+      <div className="makeUpYourBlockTypeName">
+          <h3>Summit Seekers Booking Grid</h3>
+          <p>Requrired Post: Booking</p>
+          <p>Requrired Custom-Fields:</p>
+          <ul>
+              <li>location</li>
+              <li>start (YYYY-MM-DD)</li>
+              <li>end (YYYY-MM-DD)</li>
+          </ul>
+      </div>
+  );
 }
