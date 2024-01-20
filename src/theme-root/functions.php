@@ -56,5 +56,3 @@ add_action('rest_api_init', function () {
     'callback' => 'custom_footer_menu',
   ));
 });
-
-add_filter( 'big_image_size_threshold', '__return_false' );
