@@ -1,0 +1,121 @@
+.wpcf7-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    gap: var(--small-padding);
+
+    & p{
+        margin: 0;
+        line-height: 1;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    & label{
+        span input {
+            margin-top: 0.5rem;
+            padding: 0 0.5rem 0 0.5rem;
+            height: 40px;
+            width: 100%;
+            border-radius: 2px;
+            border: none;
+            background-color: rgba(113, 105, 99, 0.75);
+            color: var(--white);
+            font-size: 1.2rem;
+            &:active, &:focus, &:focus-visible{
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+    & p:nth-of-type(2){
+        width: 100%;
+
+        & textarea{
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background-color: rgba(113, 105, 99, 0.75);
+            color: var(--white);
+            font-size: 1.2rem;
+            border-radius: 2px;
+            border: none;
+            font-family: "Inter", sans-serif;
+            &:active, &:focus, &:focus-visible{
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+    & p:last-of-type{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    & .form-name-input{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        gap: var(--small-padding);
+    }
+    & p .wpcf7-submit{
+        width: 20rem;
+        border-radius: 0;
+        border: 2px solid var(--gray);
+        background-color: transparent;
+        color: var(--gray);
+        position: relative;
+        padding: 1.5rem 2.75rem;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s var(--ease);
+        z-index: 2;
+        font-family: "Inter", sans-serif;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: -5px;
+            width: 0%;
+            height: 100%;
+            transform-origin: center left;
+            rotate: -3deg;
+            background-color: var(--green-transparent);
+            transition: all 0.3s var(--ease);
+            z-index: 1;
+        }
+
+        &:hover::before,
+        &:focus::before {
+            width: calc(100% + 10px) !important;
+        }
+    }
+}
+
+.wpcf7-response-output{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-padding);
+    flex-direction: column;
+    text-align: center;
+    margin: 0 !important;
+    padding: 1rem !important;
+    border-radius: 2px;
+    border-color: var(--green-transparent) !important;
+    outline: none;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
