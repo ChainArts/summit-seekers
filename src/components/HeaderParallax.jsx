@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { motion, useTransform, useScroll, cubicBezier } from "framer-motion";
+import { motion, useTransform, useScroll, cubicBezier} from "framer-motion";
 import useFetchMenu from "./useFetchMenu";
 import PR_layer_1 from '../assets/par_bg_layer_1.webp';
 import PR_layer_2 from '../assets/par_bg_layer_2.webp';
@@ -8,6 +8,46 @@ import PR_layer_4 from '../assets/par_bg_layer_4.webp';
 import PR_layer_5 from '../assets/par_bg_layer_5.webp';
 import PR_layer_6 from '../assets/par_bg_layer_6.webp';
 import PR_layer_7 from '../assets/par_bg_layer_7.webp';
+
+const navVariants = {
+    hidden: {
+        opacity: 0,
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            when: "beforeChildren",
+            ease: [.14, .8, .4, 1],
+            duration: 0.2,
+            
+        }
+    }
+}
+
+const ulVariants = {
+    hidden: {opacity: 0},
+    visible: {opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+            ease: [.14, .8, .4, 1],
+        }
+    }
+}
+
+const liVariants = {
+    hidden: {
+        opacity: 0,
+        y: "8rem"
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 1.5,
+            ease: [.14, .8, .4, 1]
+        }
+    }
+}
 
 const scrollIndicator = {
     animate: {
@@ -23,26 +63,33 @@ const scrollIndicator = {
     }
 }
 
+
+
 const HeroNav = () => {
 
     const { menu } = useFetchMenu("main");
 
     return (
-        <div className="hero-nav">
-            <ul>
-                {menu.map((item) => (
-                    <li key={item.id}>
-                        <a href={item.url}>{item.title}</a>
-                    </li>
-                ))}
-            </ul>
+
+        <motion.div className="hero-nav" variants={navVariants} initial="hidden" animate="visible">
+                {menu && (
+                    <motion.ul variants={ulVariants}>
+                        {menu.map((item) => (
+                            <motion.li key={item.id} variants={liVariants}>
+                                <motion.a href={item.url}>{item.title}</motion.a>
+                            </motion.li>
+                        ))}
+                    </motion.ul>
+
+                )}
             <div className="hero-nav-styling">
                 <div className="corner left-top"></div>
                 <div className="corner left-bottom"></div>
                 <div className="corner right-top"></div>
                 <div className="corner right-bottom"></div>
             </div>
-        </div>
+
+        </motion.div>
     );
 }
 
@@ -52,7 +99,7 @@ const ScrollMarquee = () => {
             <motion.div className="scroll-indicator">
                 <motion.div className="scroll-indicator-slider" variants={scrollIndicator} animate="animate" />
             </motion.div>
-            <motion.span className="scroll-indicator-text" initial={{ scaleY: 0 }} animate={{ scaleY: 1 }} transition={{ delay: 0.5, duration: 0.3, ease: cubicBezier(.14, .8, .4, 1) }}>scroll to discover
+            <motion.span className="scroll-indicator-text" initial={{ scaleY: 0 }} animate={{ scaleY: 1 }} transition={{ delay: 0.5, duration: 0.3, ease: [.14, .8, .4, 1] }}>scroll to discover
                 <div className="scroll-marquee-styling">
                     <div className="corner left-top"></div>
                     <div className="corner left-bottom"></div>
