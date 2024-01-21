@@ -7,7 +7,7 @@ header{
 .desktop-nav{
   
   background-color: var(--brown);
-  background: rgba( 113, 105, 99, 0.75 );
+  background: var(--brown-transparent);
   backdrop-filter: blur( 5px );
   -webkit-backdrop-filter: blur( 5px );
   border-radius: 3rem;

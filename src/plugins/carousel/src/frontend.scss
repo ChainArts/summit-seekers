@@ -25,6 +25,10 @@
     color: #434343;
     cursor: pointer;
     line-height: 1;
+
+    &:hover {
+        animation: arrow 1s infinite;
+    }
 }
 
 .swiper-wrapper {
@@ -36,23 +40,38 @@
         width: 20rem;
         height: 30rem;
 
+        &:hover {
+            .content {
+                transform: translateY(5rem);
+                transition: all 0.4s var(--ease);
+
+                .arrow {
+                    margin-left: 40%;
+                    animation: arrow 1s infinite;
+                    transition: all 0.4s var(--ease);
+                }
+            }
+        }
+
         .content {
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: flex-start;
             position: absolute;
-            padding: 1.25rem;
-            top: 0;
+            padding: 40% 1.25rem 1.25rem 1.25rem;
             bottom: 0;
-            color: white;
+            color: var(--white);
             width: 100%;
             background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
             transition: all 0.4s var(--ease);
+            transform: translateY(0%);
 
         }
 
             .arrow {
                 font-size: 3rem;
+                margin-left: 0;
+                transition: all 0.4s var(--ease);
             }
 
             h3 {
@@ -85,5 +104,17 @@
     .swiper-wrapper, .swiper {
         width: 320px;
         min-width: 320px;
+    }
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(0.5rem);
+    }
+    100% {
+        transform: translateX(0);
     }
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, cubicBezier } from 'framer-motion';
 import useMousePos from './useMousePos';
 import Lenis from '@studio-freight/lenis';
+import { LiaAngleRightSolid } from 'react-icons/lia';
 
 
 const enableLenisScroll = () => {
@@ -21,18 +22,21 @@ const CustomCursor = () => {
     enableLenisScroll();
 
     const { x, y } = useMousePos();
-    const [isHovered, setIsHovered] = useState(false); // State to track hover state
+    const [isHovered, setIsHovered] = useState(false);
+    const [cursorText, setCursorText] = useState('');
+    
+    // State to track hover state
 
     const handleHoverStart = () => {
         setIsHovered(true);
         // Add logic to update cursor text when hovering starts
-        document.getElementById('cursor-text').innerText = '>';
+        setCursorText(LiaAngleRightSolid);
     };
 
     const handleHoverEnd = () => {
         setIsHovered(false);
         // Add logic to clear cursor text when hovering ends
-        document.getElementById('cursor-text').innerText = '';
+        setCursorText('');
     };
 
     useEffect(() => {
@@ -75,7 +79,7 @@ const CustomCursor = () => {
                     <div className="corner right-bottom"></div>
 
                 </div>
-                <div className="cursor-text" id="cursor-text"></div>
+                <div className="cursor-text" id="cursor-text">{cursorText}</div>
             </div>
         </motion.div>
     );

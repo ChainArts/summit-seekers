@@ -56,6 +56,16 @@
                         echo apply_filters('the_content', $contact->post_content); 
                         ?>
                     </div>
+                    <ul class="footer-menu">
+                        <?php
+                        $menu_args = array(
+                            'theme_location' => 'footer-menu',
+                            'container'      => false,
+                            'items_wrap'     => '%3$s',
+                        );
+                        wp_nav_menu($menu_args);
+                        ?>
+                    </ul>
             <?php endif; ?>
         </div>
         <?php
@@ -64,7 +74,7 @@
     ?>
     <footer>
     <?php
-    render_footer_links();  
+    render_footer_links();
     render_contact();
     ?>
 </footer>
