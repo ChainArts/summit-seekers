@@ -125,7 +125,7 @@ function render_booking_grid_item($post)
                 }
                 </style>
             </defs>
-            <g id="i64GWl.tif">
+            <g>
                 <polygon class="cls-1" points="59.27 29.85 0 29.85 0 23.72 59.1 23.7 39.31 4.17 43.57 0 70.67 26.84 43.3 53.56 39.38 49.83 59.27 29.85"/>
             </g>
             </svg>

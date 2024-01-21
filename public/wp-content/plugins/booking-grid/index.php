@@ -116,7 +116,7 @@ function render_booking_grid_item($post)
             <h3><?= $post->post_title ?></h3>
             </div>
 
-            <svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.67 53.56">
+            <svg data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.67 53.56">
             <defs>
                 <style>
                 .cls-1 {
@@ -125,7 +125,7 @@ function render_booking_grid_item($post)
                 }
                 </style>
             </defs>
-            <g id="i64GWl.tif">
+            <g>
                 <polygon class="cls-1" points="59.27 29.85 0 29.85 0 23.72 59.1 23.7 39.31 4.17 43.57 0 70.67 26.84 43.3 53.56 39.38 49.83 59.27 29.85"/>
             </g>
             </svg>
