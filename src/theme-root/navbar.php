@@ -7,7 +7,7 @@
         echo '<ul><li><a href="' . ($is_home_page ? '#' : $home_link) . '"' . ($is_home_page ? ' onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: \'smooth\' });"' : '') . '>Summit Seekers</a></li>';
 
         $menu_args = array(
-            'theme_location' => 'main-menu', 
+            'theme_location' => 'main', 
             'container'      => false,
             'items_wrap'     => '%3$s</ul>',
         );

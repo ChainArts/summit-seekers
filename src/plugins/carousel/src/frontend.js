@@ -63,38 +63,20 @@ function CarouselButton({ direction, swiperRef}) {
     );
 }
 
-function CarouselItem ({ data }) {
+function CarouselItem({ data }) {
+    const [ image ] = useImageUrl(data.featured_media);
+
     return (
         <a href={data.link} className="card">
-            <Image id={data.featured_media} />
+            <div className="picture-container">
+                <img src={image.source_url} alt={image.alt_text} />
+            </div>
             <div className="content">
                 <LiaArrowRightSolid className="arrow" />
                 <h3>{data.title.rendered}</h3>
                 <p>{data.meta.footnotes}</p>
             </div>
         </a>
-    );
-}
-
-function Image({ id }) {
-    const [image] = useImageUrl(id);
-    const imgTagRegex = /<img [^>]*src="[^"]*"[^>]*>/;
-    let imageTag = "";
-
-    if (image.description) {
-        const match = image.description.rendered.match(imgTagRegex);
-        imageTag = match ? match[0] : "";
-    }
-
-    return (
-        <>
-            <div
-                className="picture-container"
-                dangerouslySetInnerHTML={{
-                    __html: image.description ? imageTag : null,
-                }}
-            />
-        </>
     );
 }
 
