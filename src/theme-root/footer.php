@@ -29,7 +29,7 @@
                 <?php
                 if (!empty($split_content)) {
                     foreach ($split_content as $part) {
-                        echo '<div>' . $part . '</div>';
+                        echo '<div>' . $part . '</ul></div>';
                     }
                 }
                 ?>
