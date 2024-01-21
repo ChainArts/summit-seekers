@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { motion, useTransform, useScroll, cubicBezier } from "framer-motion";
+import { motion, useTransform, useScroll, cubicBezier, AnimatePresence} from "framer-motion";
 import useFetchMenu from "./useFetchMenu";
 import PR_layer_1 from '../assets/par_bg_layer_1.webp';
 import PR_layer_2 from '../assets/par_bg_layer_2.webp';
@@ -19,16 +19,16 @@ const navVariants = {
             when: "beforeChildren",
             ease: [.14, .8, .4, 1],
             duration: 0.2,
-
+            
         }
     }
 }
 
 const ulVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
+    hidden: {opacity: 0},
+    visible: {opacity: 1,
         transition: {
+            delayChildren: 0.2,
             staggerChildren: 0.1,
             ease: [.14, .8, .4, 1],
         }
@@ -38,7 +38,7 @@ const ulVariants = {
 const liVariants = {
     hidden: {
         opacity: 0,
-        y: "8rem"
+        y: "3rem"
     },
     visible: {
         opacity: 1,
@@ -71,9 +71,9 @@ const HeroNav = () => {
     const { menu } = useFetchMenu("main");
 
     return (
-        <>
-            {menu && (
-                <motion.div className="hero-nav" variants={navVariants} initial="hidden" animate="visible">
+        <AnimatePresence>
+        {menu && (
+        <motion.div className="hero-nav" variants={navVariants} initial="hidden" animate="visible">
                     <motion.ul variants={ulVariants}>
                         {menu.map((item) => (
                             <motion.li key={item.id} variants={liVariants}>
@@ -81,15 +81,17 @@ const HeroNav = () => {
                             </motion.li>
                         ))}
                     </motion.ul>
-                    <div className="hero-nav-styling">
-                        <div className="corner left-top"></div>
-                        <div className="corner left-bottom"></div>
-                        <div className="corner right-top"></div>
-                        <div className="corner right-bottom"></div>
-                    </div>
+            <div className="hero-nav-styling">
+                <div className="corner left-top"></div>
+                <div className="corner left-bottom"></div>
+                <div className="corner right-top"></div>
+                <div className="corner right-bottom"></div>
+            </div>
 
                 </motion.div>
-            )}</>
+        )}
+        </AnimatePresence>
+        
     );
 }
 
