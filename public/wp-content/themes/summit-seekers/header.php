@@ -29,7 +29,7 @@
     </div>
     <?php $isFrontPage = is_front_page();
     if ($isFrontPage) { ?>
-            <div id="parallax-header-hook" style="min-height: 140vh, height: 100%">
+            <div id="parallax-header-hook" style="min-height: 140vh; height: 100%;">
                 <!--react-->
             </div>
     <?php

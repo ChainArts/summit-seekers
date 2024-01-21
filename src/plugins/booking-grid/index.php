@@ -116,7 +116,7 @@ function render_booking_grid_item($post)
             <h3><?= $post->post_title ?></h3>
             </div>
 
-            <svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.67 53.56">
+            <svg data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.67 53.56">
             <defs>
                 <style>
                 .cls-1 {
