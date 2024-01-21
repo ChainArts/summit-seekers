@@ -37,7 +37,7 @@ const CustomCursor = () => {
 
     useEffect(() => {
         const delay = setTimeout(() => {
-            const anchors = document.querySelectorAll('a, .wp-block-button, .cursor-anchor');
+            const anchors = document.querySelectorAll('a, .wp-block-button, .cursor-anchor, wpcf7-submit');
 
             anchors.forEach((anchor) => {
                 anchor.addEventListener('mouseenter', handleHoverStart);
